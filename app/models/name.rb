@@ -1,5 +1,6 @@
 class Name < ApplicationRecord
   belongs_to :origin_country, optional: true
+  has_one :wiki, dependent: :destroy
 
   enum category: { male: 0, female: 1}
 
