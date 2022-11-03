@@ -1,0 +1,10 @@
+<h1><%= @name.title %></h1>
+<p><%= @name.category %></p>
+<p><%= @name&.origin_country.title %></p>
+<hr>
+<% if @wiki %>
+  <h3>Origin:</h3>
+  <p><%= @wiki.origin %></p>
+  <h3>Meaning:</h3>
+  <p><%= @wiki.meaning %></p>
+<% end %>

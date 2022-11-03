@@ -3,6 +3,11 @@ class NamesController < ApplicationController
     @names = Name.all
   end
 
+  def show
+    @name = Name.find(params[:id])
+    @wiki = @name.wiki
+  end
+
   def new
     @name = Name.new
     @name.build_wiki

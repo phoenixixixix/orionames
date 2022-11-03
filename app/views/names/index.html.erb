@@ -2,6 +2,6 @@
 <%= link_to "Create new name", new_name_path %>
 <ul>
   <% @names.each do |name| %>
-  <li><%= name.title %></li>
+  <li><%= link_to name.title, name_path(name) %></li>
   <% end %>
 </ul>
