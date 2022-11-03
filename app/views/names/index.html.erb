@@ -1,0 +1,7 @@
+<h1>Names List</h1>
+<%= link_to "Create new name", new_name_path %>
+<ul>
+  <% @names.each do |name| %>
+  <li><%= name.title %></li>
+  <% end %>
+</ul>
