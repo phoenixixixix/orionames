@@ -9,7 +9,19 @@ class Name < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :category, presence: true
 
+  validate :fete_day_format
+
   def human_category
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{self.category}")
+  end
+
+  private
+
+  def fete_day_format
+    if fete_days_changed?
+      fete_days.each do |date|
+        errors.add(:fete_days, "wrong input") unless [Date, ActiveSupport::TimeWithZone].include? date.class
+      end
+    end
   end
 end

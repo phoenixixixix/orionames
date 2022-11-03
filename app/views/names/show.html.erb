@@ -1,6 +1,6 @@
 <h1><%= @name.title %></h1>
 <p><%= @name.category %></p>
-<p><%= @name&.origin_country.title %></p>
+<p><%= @name&.origin_country&.title %></p>
 <hr>
 <% if @wiki %>
   <h3>Origin:</h3>
