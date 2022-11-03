@@ -5,6 +5,7 @@ class NamesController < ApplicationController
 
   def new
     @name = Name.new
+    @name.build_wiki
   end
 
   def create
@@ -19,6 +20,7 @@ class NamesController < ApplicationController
   private
 
   def name_params
-    params.require(:name).permit(:title, :category, :origin_country_id)
+    params.require(:name).permit(:title, :category, :origin_country_id, 
+      wiki_attributes: [:origin, :meaning])
   end
 end

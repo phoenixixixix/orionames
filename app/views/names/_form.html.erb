@@ -1,4 +1,4 @@
-<%= form_for @name do |f| %>
+<%= form_with model: @name do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control"  %>
@@ -13,6 +13,18 @@
     <%= f.label :origin_country_id %>
     <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, class: "form-control", include_blank: true %>
   </div>
+
+  <%= f.fields_for :wiki do |wiki_form| %>
+    <div class="form-group">
+      <%= wiki_form.label :origin %>
+      <%= wiki_form.text_field :origin, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= wiki_form.label :meaning %>
+      <%= wiki_form.text_field :meaning, class: "form-control" %>
+    </div>
+  <% end %>
 
   <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>
