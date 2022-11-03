@@ -19,6 +19,6 @@ class NamesController < ApplicationController
   private
 
   def name_params
-    params.require(:name).permit(:title, :category)
+    params.require(:name).permit(:title, :category, :origin_country_id)
   end
 end
