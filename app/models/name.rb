@@ -15,6 +15,15 @@ class Name < ApplicationRecord
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{self.category}")
   end
 
+  def fits_to_query(query)
+    resp = []
+    query.each do |arg, value|
+      resp << nil unless self.send("#{arg}").to_s == value
+    end
+
+    resp.empty? ? self : false
+  end
+
   private
 
   def fete_day_format

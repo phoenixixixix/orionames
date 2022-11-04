@@ -1,6 +1,9 @@
 class NamesController < ApplicationController
   def index
-    @names = Name.all
+    populate_filters(query_string_params)
+
+    @names = filter_names(Name.all, query_string_params)
+    @categories = Name.categories.keys
   end
 
   def show
@@ -27,5 +30,17 @@ class NamesController < ApplicationController
   def name_params
     params.require(:name).permit(:title, :category, :origin_country_id, 
       wiki_attributes: [:origin, :meaning])
+  end
+
+  def query_string_params
+    params.permit(:origin_country_id, :category)
+  end
+
+  def filter_names(names_list, query)
+    return names_list if query.empty?
+
+    names_list.select do |name|
+      name.fits_to_query(query)
+    end
   end
 end

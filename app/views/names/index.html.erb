@@ -1,5 +1,14 @@
 <h1>Names List</h1>
 <%= link_to "Create new name", new_name_path %>
+
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= link_to category, names_path(populate_filters(category: category)) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
 <ul>
   <% @names.each do |name| %>
   <li><%= link_to name.title, name_path(name) %></li>

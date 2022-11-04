@@ -1,2 +1,16 @@
 <h1>Search</h1>
 <%= link_to "Go to the names list", names_path %>
+
+<h3>By Origin</h3>
+<ul>
+  <% @origin_countries.each do |origin| %>
+  <li><%= link_to origin.title, names_path(origin_country_id: origin.id) %></li>
+  <% end %>
+</ul>
+
+<h3>By Category</h3>
+<ul>
+  <% @categories.each do |category| %>
+  <li><%= link_to category, names_path(category: category) %></li>
+  <% end %>
+</ul>
