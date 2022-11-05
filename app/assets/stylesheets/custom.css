@@ -1,0 +1,80 @@
+/*
+Font options
+
+font-family: 'Istok Web', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Marmelad', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Rubik', sans-serif;
+*/
+
+/*Fonts setup*/
+.navbar-brand {
+  font-family: 'Marmelad', sans-serif;
+}
+
+.nav-link {
+  font-family: 'Istok Web', sans-serif;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h4 {
+  font-family: 'Lora', serif;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-action {
+  font-size: 19px !important;
+}
+
+/*HTML elements styles*/
+body {
+  background-color: #FCE38A !important;
+}
+
+h1 {
+  margin-bottom: 16px !important;
+}
+
+/*Wrappers styles*/
+.content-wrapper {
+  background-color: #F0F5F9;
+  border-radius: 50px 50px 0px 0px;
+}
+
+.search-field {
+  max-width:  400px;
+}
+
+/*Navbar styles*/
+.navbar-light .navbar-nav .nav-link {
+  color: #000 !important;
+}
+
+/*Main page styles*/
+.main-page-block {
+  margin-bottom: 80px;
+}
+
+/*Buttons styles*/
+.btn {
+  background: #F0F5F9;
+  box-shadow: 12px 12px 20px #DFE4E8, -12px -12px 20px #FFFFFF;
+  border-radius: 15px !important;
+  padding: 5px 30px !important;
+  margin-right: 20px !important;
+}
+
+.btn-plain {
+  color:  #535353 !important;
+}
+
+.btn-action {
+  color:  #FF165D !important;
+}
