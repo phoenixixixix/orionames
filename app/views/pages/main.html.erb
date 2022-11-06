@@ -32,10 +32,20 @@
   <div class="row">
     <div class="col">
       <h4 class="mb-3">Топ чоловічих імен</h4>
+      <ul>
+        <% @popular_male_names.each do |record| %>
+          <li><%= link_to record.name_title, name_path(record.name_id) %></li>
+        <% end %>
+      </ul> 
     </div>
 
     <div class="col">
       <h4 class="mb-3">Топ жіночих імен</h4>
+      <ul>
+        <% @popular_female_names.each do |record| %>
+          <li><%= link_to record.name_title, name_path(record.name_id) %></li>
+        <% end %>
+      </ul> 
     </div>
   </div>
 </div>
