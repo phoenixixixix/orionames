@@ -78,3 +78,19 @@ h1 {
 .btn-action {
   color:  #FF165D !important;
 }
+
+.btn-letter {
+  background: #F0F5F9;
+  box-shadow: 5px 5px 10px #CCD0D4, -5px -5px 10px #FFFFFF;
+  border-radius: 100% !important;
+  padding: 12px 0px !important;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+
+
+
+

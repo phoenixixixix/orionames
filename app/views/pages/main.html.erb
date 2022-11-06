@@ -11,6 +11,9 @@
 
   <div class="mb-5">
     <h4 class="mb-3">За алфавітом</h4>
+    <% @alphabet.each do |letter| %>
+      <%= link_to letter, names_path(letter: letter), class: "btn btn-plain btn-letter" %>
+    <% end %>
   </div>
 
   <div class="mb-5">

@@ -1,4 +1,8 @@
+require "./lib/letters"
+
 class Name < ApplicationRecord
+  include Letters
+
   belongs_to :origin_country, optional: true
   has_one :wiki, dependent: :destroy
 
