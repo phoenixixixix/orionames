@@ -29,6 +29,11 @@ h4 {
   font-family: 'Montserrat', sans-serif;
 }
 
+.plain-text {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px !important;
+}
+
 .btn-action {
   font-size: 19px !important;
 }
@@ -60,6 +65,10 @@ h1 {
 /*Main page styles*/
 .main-page-block {
   margin-bottom: 80px;
+}
+
+.list-group-item-popular {
+  background-color: transparent !important;
 }
 
 /*Buttons styles*/

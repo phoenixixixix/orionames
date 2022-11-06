@@ -29,23 +29,28 @@
 <div class="main-page-block">
   <h1>Популярні</h1>
 
-  <div class="row">
+  <div class="row mb-4">
     <div class="col">
       <h4 class="mb-3">Топ чоловічих імен</h4>
-      <ul>
+      <ul class="list-group list-group-flush">
         <% @popular_male_names.each do |record| %>
-          <li><%= link_to record.name_title, name_path(record.name_id) %></li>
+          <li class="list-group-item list-group-item-popular plain-text"> > <%= link_to record.name_title, name_path(record.name_id), class: "text-dark" %></li>
         <% end %>
       </ul> 
+
     </div>
 
     <div class="col">
       <h4 class="mb-3">Топ жіночих імен</h4>
-      <ul>
+      <ul class="list-group list-group-flush">
         <% @popular_female_names.each do |record| %>
-          <li><%= link_to record.name_title, name_path(record.name_id) %></li>
+          <li class="list-group-item list-group-item-popular plain-text"> > <%= link_to record.name_title, name_path(record.name_id), class: "text-dark" %></li>
         <% end %>
       </ul> 
     </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "До спску всіх імен", names_path, class: "btn btn-action" %>
   </div>
 </div>
