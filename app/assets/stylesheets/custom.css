@@ -8,7 +8,10 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Rubik', sans-serif;
 */
 
-/*Fonts setup*/
+/*
+Fonts setup
+*/
+
 .navbar-brand {
   font-family: 'Marmelad', sans-serif;
 }
@@ -38,7 +41,12 @@ h4 {
   font-size: 19px !important;
 }
 
-/*HTML elements styles*/
+
+
+/*
+HTML elements styles
+*/
+
 body {
   background-color: #FCE38A !important;
 }
@@ -47,22 +55,43 @@ h1 {
   margin-bottom: 16px !important;
 }
 
-/*Wrappers styles*/
+
+
+/*
+Wrappers styles
+*/
+
 .content-wrapper {
   background-color: #F0F5F9;
   border-radius: 50px 50px 0px 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .content-wrapper {
+    border-radius: 30px 30px 0px 0px;
+  }
 }
 
 .search-field {
   max-width:  400px;
 }
 
-/*Navbar styles*/
+
+
+/*
+Navbar styles
+*/
+
 .navbar-light .navbar-nav .nav-link {
   color: #000 !important;
 }
 
-/*Main page styles*/
+
+
+/*
+Main page styles
+*/
+
 .main-page-block {
   margin-bottom: 80px;
 }
@@ -71,7 +100,12 @@ h1 {
   background-color: transparent !important;
 }
 
-/*Buttons styles*/
+
+
+/*
+Buttons styles
+*/
+
 .btn {
   background: #F0F5F9;
   box-shadow: 12px 12px 20px #DFE4E8, -12px -12px 20px #FFFFFF;
