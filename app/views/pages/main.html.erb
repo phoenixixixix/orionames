@@ -23,7 +23,7 @@
     <% end %>
   </div>
 
-  <%= link_to "До спску всіх імен", names_path, class: "btn btn-action" %>
+  <%= link_to "До списку всіх імен", names_path, class: "btn btn-action" %>
 </div>
 
 <div class="main-page-block">
@@ -46,11 +46,11 @@
         <% @popular_female_names.each do |record| %>
           <li class="list-group-item list-group-item-popular plain-text"> > <%= link_to record.name_title, name_path(record.name_id), class: "text-dark" %></li>
         <% end %>
-      </ul> 
+      </ul>
     </div>
   </div>
 
   <div class="text-center">
-    <%= link_to "До спску всіх імен", names_path, class: "btn btn-action" %>
+    <%= link_to "До списку всіх імен", names_path, class: "btn btn-action" %>
   </div>
 </div>

@@ -2,8 +2,11 @@ class NamesController < ApplicationController
   def index
     populate_filters(query_string_params)
 
-    @names = filter_names(Name.all, query_string_params)
+    @names_hash = filter_names(Name.all, query_string_params).group_by { |n| n.title.first }
+
     @categories = Name.categories.keys
+    @alphabet = Name::UK_LETTERS_LIST
+    @origin_countries = OriginCountry.all
   end
 
   def show
