@@ -20,12 +20,8 @@ class Name < ApplicationRecord
   end
 
   def fits_to_query(query)
-    resp = []
-    query.each do |arg, value|
-      resp << nil unless self.send("#{arg}").to_s == value
-    end
-
-    resp.empty? ? self : false
+    # TODO
+    true
   end
 
   private
