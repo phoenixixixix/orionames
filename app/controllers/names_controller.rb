@@ -8,7 +8,7 @@ class NamesController < ApplicationController
 
     @categories = Name.categories.keys
     @alphabet = Name::UK_LETTERS_LIST
-    @origin_countries = OriginCountry.all
+    @origin_countries = OriginCountry.select(:id, :uk_title_plural)
   end
 
   def show
