@@ -19,7 +19,7 @@
   <div class="mb-5">
     <h4 class="mb-3">За походженням</h4>
     <% @origin_countries.each do |origin| %>
-      <%= link_to origin.uk_title_plural, names_path(origin_country_id: origin.id), class: "btn btn-plain" %>
+      <%= link_to origin.uk_title_plural, names_path(origin: origin.id), class: "btn btn-plain" %>
     <% end %>
   </div>
 
