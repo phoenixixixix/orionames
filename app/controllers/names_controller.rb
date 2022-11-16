@@ -4,7 +4,8 @@ class NamesController < ApplicationController
                                                  filter_params[:letter],
                                                  filter_params[:origin]
 
-    @names_hash = filtered_names(Name.all, filter_params).group_by { |n| n.title.first }
+    @names = filtered_names(Name.all, filter_params)
+    @names_hash = @names.group_by(&:capital_letter).sort_by { |letter, _| letter }.to_h
 
     @categories = Name.categories.keys
     @alphabet = Name::UK_LETTERS_LIST
