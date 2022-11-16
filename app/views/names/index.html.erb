@@ -1,20 +1,20 @@
 <h1 class="pt-3">Список Імен</h1>
 <div class="mb-5">
   <% @categories.each do |category| %>
-    <%= link_to category, names_path(category: category, letter: @curr_letter, origin: @curr_origin,), class: "btn btn-plain" %>
+    <%= link_to category, names_path(by_category: category, by_letter: @curr_letter, by_origin: @curr_origin), class: "btn btn-plain" %>
   <% end %>
 </div>
 <div class="mb-5">
   <h4 class="mb-3">За алфавітом</h4>
   <% @alphabet.each do |letter| %>
-    <%= link_to letter, names_path(letter: letter, category: @curr_category, origin: @curr_origin), class: "btn btn-plain btn-letter" %>
+    <%= link_to letter, names_path(by_letter: letter, by_category: @curr_category, by_origin: @curr_origin), class: "btn btn-plain btn-letter" %>
   <% end %>
 </div>
 
 <div class="mb-5">
   <h4 class="mb-3">За походженням</h4>
   <% @origin_countries.each do |origin| %>
-    <%= link_to origin.uk_title_plural, names_path(origin: origin.id, category: @curr_category, letter: @curr_letter), class: "btn btn-plain" %>
+    <%= link_to origin.uk_title_plural, names_path(by_origin: origin.id, by_category: @curr_category, by_letter: @curr_letter), class: "btn btn-plain" %>
   <% end %>
 </div>
 

@@ -18,19 +18,19 @@ class Name < ApplicationRecord
 
   validate :fete_day_format
 
-  scope :category_filter, ->(category) { where(category: category) }
-  scope :origin_filter, ->(origin) { where(origin_country: origin) }
-  scope :letter_filter, ->(letter) { where(capital_letter: letter) }
+  scope :by_category, ->(category) { where(category: category) }
+  scope :by_origin, ->(origin) { where(origin_country: origin) }
+  scope :by_letter, ->(letter) { where(capital_letter: letter) }
 
   def human_category
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{self.category}")
   end
 
   def self.apply_filters(filters_hash)
-    names_arr = self
-    filters_hash.each { |name, value| names_arr = names_arr.send("#{name}_filter", value) }
+    names = self
+    filters_hash.each { |by_filter, value| names = names.public_send(by_filter, value) }
 
-    names_arr
+    names
   end
 
   private

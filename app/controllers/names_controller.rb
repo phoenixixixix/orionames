@@ -1,8 +1,8 @@
 class NamesController < ApplicationController
   def index
-    @curr_category, @curr_letter, @curr_origin = filter_params[:category],
-                                                 filter_params[:letter],
-                                                 filter_params[:origin]
+    @curr_category, @curr_letter, @curr_origin = filter_params[:by_category],
+                                                 filter_params[:by_letter],
+                                                 filter_params[:by_origin]
 
     @names = filtered_names(Name.all, filter_params)
     @names_hash = @names.group_by(&:capital_letter).sort_by { |letter, _| letter }.to_h
@@ -39,7 +39,7 @@ class NamesController < ApplicationController
   end
 
   def filter_params
-    params.permit(:category, :letter, :origin)
+    params.permit(:by_category, :by_letter, :by_origin)
   end
 
   def filtered_names(names, filters)

@@ -5,21 +5,21 @@
 
   <div class="mb-5">
     <% @categories.each do |category| %>
-      <%= link_to category, names_path(category: category), class: "btn btn-plain" %>
+      <%= link_to category, names_path(by_category: category), class: "btn btn-plain" %>
     <% end %>
   </div>
 
   <div class="mb-5">
     <h4 class="mb-3">За алфавітом</h4>
     <% @alphabet.each do |letter| %>
-      <%= link_to letter, names_path(letter: letter), class: "btn btn-plain btn-letter" %>
+      <%= link_to letter, names_path(by_letter: letter), class: "btn btn-plain btn-letter" %>
     <% end %>
   </div>
 
   <div class="mb-5">
     <h4 class="mb-3">За походженням</h4>
     <% @origin_countries.each do |origin| %>
-      <%= link_to origin.uk_title_plural, names_path(origin: origin.id), class: "btn btn-plain" %>
+      <%= link_to origin.uk_title_plural, names_path(by_origin: origin.id), class: "btn btn-plain" %>
     <% end %>
   </div>
 
