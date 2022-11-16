@@ -1,9 +1,5 @@
 class NamesController < ApplicationController
   def index
-    @curr_category, @curr_letter, @curr_origin = filter_params[:by_category],
-                                                 filter_params[:by_letter],
-                                                 filter_params[:by_origin]
-
     @names = filtered_names(Name.all, filter_params)
     @names_hash = @names.group_by(&:capital_letter).sort_by { |letter, _| letter }.to_h
 
