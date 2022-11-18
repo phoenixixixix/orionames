@@ -28,6 +28,11 @@ h4 {
   font-family: 'Lora', serif;
 }
 
+p {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px !important;
+}
+
 .btn {
   font-family: 'Montserrat', sans-serif;
 }
@@ -101,6 +106,19 @@ Main page styles
 }
 
 
+/*
+Name days Calendar styles
+*/
+
+.celebration-box {
+  background: #F0F5F9;
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+
+  padding: 20px;
+  height: 100%;
+}
+
 
 /*
 Buttons styles
@@ -112,6 +130,7 @@ Buttons styles
   border-radius: 15px !important;
   padding: 5px 30px !important;
   margin-right: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 .btn-plain {
