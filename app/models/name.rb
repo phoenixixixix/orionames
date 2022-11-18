@@ -10,12 +10,13 @@ class Name < ApplicationRecord
 
   enum category: { male: 0, female: 1}
 
+  before_save -> { fete_days.uniq!}
   before_create -> { title.capitalize! }
   before_create :populate_capital_letter
+  after_commit :populate_name_days
 
   validates :title, presence: true, uniqueness: true
   validates :category, presence: true
-
   validate :fete_day_format
 
   scope :by_category, ->(category) { where(category: category) }
@@ -35,6 +36,14 @@ class Name < ApplicationRecord
 
   private
 
+  def populate_name_days
+    fete_days.each do |date|
+      name_day = NameDay.find_or_initialize_by(day: date.day, month: date.month)
+      name_day.names_list << title
+      name_day.save
+    end
+  end
+
   def populate_capital_letter
     self.capital_letter = title.first
   end
@@ -42,7 +51,9 @@ class Name < ApplicationRecord
   def fete_day_format
     if fete_days_changed?
       fete_days.each do |date|
-        errors.add(:fete_days, "wrong input") unless [Date, ActiveSupport::TimeWithZone].include? date.class
+        # Only String or ::TimeWithZone will pass, because of errors
+        # on interaction Date class with psql datetime format when array: true
+        errors.add(:fete_days, "wrong input") unless [String, ActiveSupport::TimeWithZone].include? date.class
       end
     end
   end
