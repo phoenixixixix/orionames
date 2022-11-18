@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_13_193347) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_120158) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "name_days", force: :cascade do |t|
+    t.integer "day", null: false
+    t.integer "month", null: false
+    t.string "names_list", default: [], array: true
+    t.integer "celebration_status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "names", force: :cascade do |t|
     t.string "title"
