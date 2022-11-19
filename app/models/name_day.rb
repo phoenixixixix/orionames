@@ -10,11 +10,11 @@ class NameDay < ApplicationRecord
   scope :by_month, ->(month) { where(month: month) }
 
   def self.celebration_today
-    self.today.limit(1)[0]
+    find_by(celebration_status: :today)
   end
 
   def self.celebration_tomorrow
-    self.tomorrow.limit(1)[0]
+    find_by(celebration_status: :tomorrow)
   end
 
   def human_day_month
