@@ -42,20 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_18_194414) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "popular_female_names", force: :cascade do |t|
-    t.integer "name_id"
-    t.string "name_title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "popular_male_names", force: :cascade do |t|
-    t.integer "name_id"
-    t.string "name_title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "selections", force: :cascade do |t|
     t.string "title"
     t.json "names"

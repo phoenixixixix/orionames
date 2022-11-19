@@ -36,7 +36,7 @@
       <h4 class="mb-3"><%= @selection_first.title %></h4>
       <ul class="list-group list-group-flush">
         <% @selection_first.names.each do |id, name| %>
-          <li class="list-group-item list-group-item-popular plain-text"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
+          <li class="list-group-item list-group-item-selection plain-text"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
         <% end %>
       </ul>
     </div>
@@ -45,7 +45,7 @@
       <h4 class="mb-3"><%= @selection_last.title %></h4>
       <ul class="list-group list-group-flush">
         <% @selection_last.names.each do |id, name| %>
-          <li class="list-group-item list-group-item-popular plain-text"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
+          <li class="list-group-item list-group-item-selection plain-text"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
         <% end %>
       </ul>
     </div>
