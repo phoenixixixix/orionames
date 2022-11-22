@@ -1,2 +1,3 @@
 <h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<p><%= markdown(@post.body) %></p>
+<%= link_to "Edit current post", edit_post_path(@post) %>
