@@ -1,0 +1,21 @@
+<%= form_with model: @post do |f| %>
+  <% if @post.errors %>
+    <% @post.errors.each do |error| %>
+      <ul>
+        <li><%= error.full_message %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, size: "70x15", class: "form-control" %>
+  </div>
+
+  <%= f.submit "Save", class: "btn btn-primary mt-4" %>
+<% end %>

@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :names
   resources :name_days, only: :index
   resources :selections, except: :show
+  resources :posts
 end
