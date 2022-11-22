@@ -52,6 +52,7 @@ gem "bootstrap", "~> 5.1.3"
 # gem "image_processing", "~> 1.2"
 
 gem "acts-as-taggable-on", "~> 9.0"
+gem "redcarpet"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
