@@ -1,15 +1,22 @@
 <%= form_with model: @post do |f| %>
-  <% if @post.errors %>
-    <% @post.errors.each do |error| %>
-      <ul>
-        <li><%= error.full_message %></li>
-      </ul>
-    <% end %>
-  <% end %>
-
-  <div class="form-group">
+  <div class="form-group mb-1">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :tag_list, "Tags (separated by coma)" %>
+
+    <button class="mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Список існуючих тегів
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <%= @all_tags.join(", ") %>
+      </div>
+    </div>
+
+    <%= f.text_field :tag_list, class: "form-control" %>
   </div>
 
   <div class="form-group">
