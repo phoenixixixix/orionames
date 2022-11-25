@@ -4,6 +4,12 @@
     <%= f.text_field :title, class: "form-control" %>
   </div>
 
+  <div class="form-group mb-1">
+    <%= f.label :photo_token %>
+    (токен фото з URL на Unsplash: https://unsplash.com/photos/<strong>UIjyAmquROE</strong>)
+    <%= f.text_field :photo_token, class: "form-control" %>
+  </div>
+
   <div class="form-group">
     <%= f.label :tag_list, "Tags (separated by coma)" %>
 
