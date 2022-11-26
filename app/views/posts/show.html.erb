@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 
-<% if @photo %>
+<% if @photo = get_unsplash_photo(@post.photo_token) %>
   <%= image_tag @photo.urls.regular, class: "img-fluid" %>
   <p class="text-center text-muted fst-italic fs-6">
     Автор фото

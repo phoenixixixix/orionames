@@ -121,6 +121,18 @@ Name days Calendar styles
 
 
 /*
+Post styles
+ */
+
+.post-thumb-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+
+/*
 Buttons styles
 */
 

@@ -1,0 +1,19 @@
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post), class: "text-dark" do %>
+
+      <div class="col">
+        <div class="h-100 post-thumb">
+          <% if @photo = get_unsplash_photo(post.photo_token) %>
+            <%= image_tag @photo.urls.thumb, class: "post-thumb-img" %>
+          <% else %>
+            <%= image_tag "placeholder.png", class: "post-thumb-img" %>
+          <% end %>
+
+          <h5 class="post-thumb-title p-2"><%= post.title %></h5>
+        </div>
+      </div>
+
+    <% end %>
+  <% end %>
+</div>

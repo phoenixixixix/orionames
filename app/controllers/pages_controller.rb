@@ -9,5 +9,7 @@ class PagesController < ApplicationController
     @name_days_months = NameDay.months.keys
     @name_day_today = NameDay.celebration_today
     @name_day_tomorrow = NameDay.celebration_tomorrow
+
+    @posts = Post.select(:id, :title, :photo_token).last(3)
   end
 end

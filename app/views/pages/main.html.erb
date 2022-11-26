@@ -97,3 +97,13 @@
     <%= link_to "Переглянути Всі", name_days_path, class: "btn btn-action" %>
   </div>
 </div>
+
+<div class="main-page-block">
+  <h1>Наш Блог</h1>
+
+  <%= render "posts/post_thumb" %>
+
+  <div class="text-center mt-4">
+    <%= link_to "Всі Пости", posts_path, class: "btn btn-action" %>
+  </div>
+</div>
