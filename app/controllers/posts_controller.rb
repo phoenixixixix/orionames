@@ -5,13 +5,7 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show
-    begin
-      @photo = Unsplash::Photo.find(@post.photo_token)
-    rescue SocketError, NoMethodError, Unsplash::NotFoundError
-      @photo = nil
-    end
-  end
+  def show; end
 
   def new
     @post = Post.new
