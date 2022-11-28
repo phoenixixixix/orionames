@@ -1,9 +1,8 @@
 /*
 Font options
 
-font-family: 'Istok Web', sans-serif;
+font-family: 'Raleway', sans-serif;
 font-family: 'Lora', serif;
-font-family: 'Marmelad', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Rubik', sans-serif;
 */
@@ -12,12 +11,14 @@ font-family: 'Rubik', sans-serif;
 Fonts setup
 */
 
-.navbar-brand {
-  font-family: 'Marmelad', sans-serif;
+.nav-link {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px !important;
 }
 
-.nav-link {
-  font-family: 'Istok Web', sans-serif;
+.nav-search {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px !important;
 }
 
 h1 {
@@ -77,11 +78,6 @@ Wrappers styles
   }
 }
 
-.search-field {
-  max-width:  400px;
-}
-
-
 
 /*
 Navbar styles
@@ -91,6 +87,15 @@ Navbar styles
   color: #000 !important;
 }
 
+.nav-search {
+  height: 35px !important;
+  margin-top: 11px;
+
+  background-color: #F0F5F9 !important;
+  box-shadow: inset 5px 5px 5px #ccd0d4, inset -5px -5px 5px #ffffff;
+  border-radius: 15px !important;
+  border: 0 !important;
+}
 
 
 /*
