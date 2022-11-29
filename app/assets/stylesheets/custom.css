@@ -61,7 +61,9 @@ h1 {
   margin-bottom: 16px !important;
 }
 
-
+.page-heading {
+  padding-top: 15px;
+}
 
 /*
 Wrappers styles
@@ -142,12 +144,20 @@ Buttons styles
 */
 
 .btn {
-  background: #F0F5F9;
-  box-shadow: 12px 12px 20px #DFE4E8, -12px -12px 20px #FFFFFF;
+  box-shadow: 5px 5px 10px #CCD0D4, -5px -5px 10px #FFFFFF;
   border-radius: 15px !important;
   padding: 5px 30px !important;
   margin-right: 20px !important;
   margin-bottom: 20px !important;
+}
+
+.btn-letter {
+  width: 50px;
+  height: 50px;
+  padding: 12px 0px !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+  border-radius: 100% !important;
 }
 
 .btn-plain {
@@ -157,19 +167,3 @@ Buttons styles
 .btn-action {
   color:  #FF165D !important;
 }
-
-.btn-letter {
-  background: #F0F5F9;
-  box-shadow: 5px 5px 10px #CCD0D4, -5px -5px 10px #FFFFFF;
-  border-radius: 100% !important;
-  padding: 12px 0px !important;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px !important;
-  margin-bottom: 10px !important;
-}
-
-
-
-
-

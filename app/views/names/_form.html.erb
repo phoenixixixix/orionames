@@ -6,25 +6,25 @@
 
   <div class="form-group">
     <%= f.label :category %>
-    <%= f.select :category, Name.categories.keys, class: "form-control" %>
+    <%= f.select :category, Name.categories.keys, {}, { class: "form-select" } %>
   </div>
 
   <div class="form-group">
     <%= f.label :origin_country_id %>
-    <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, class: "form-control", include_blank: true %>
+    <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, { include_blank: true }, { class: "form-select" } %>
   </div>
 
   <%= f.fields_for :wiki do |wiki_form| %>
     <div class="form-group">
       <%= wiki_form.label :origin %>
-      <%= wiki_form.text_field :origin, class: "form-control" %>
+      <%= wiki_form.text_area :origin, size: "70x5", class: "form-control" %>
     </div>
 
     <div class="form-group">
       <%= wiki_form.label :meaning %>
-      <%= wiki_form.text_field :meaning, class: "form-control" %>
+      <%= wiki_form.text_area :meaning, size: "70x5", class: "form-control" %>
     </div>
   <% end %>
 
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "btn btn-plain" %>
 <% end %>

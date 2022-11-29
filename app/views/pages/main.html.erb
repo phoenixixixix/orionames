@@ -1,7 +1,5 @@
-<%= render "shared/search_field" %>
-
 <div class="main-page-block">
-  <h1>Пошук</h1>
+  <h1 class="page-heading">Фільтри Імен</h1>
 
   <div class="mb-5">
     <% @categories.each do |category| %>
@@ -11,9 +9,11 @@
 
   <div class="mb-5">
     <h4 class="mb-3">За алфавітом</h4>
-    <% @alphabet.each do |letter| %>
-      <%= link_to letter, names_path(by_letter: letter), class: "btn btn-plain btn-letter" %>
-    <% end %>
+    <div class="text-center">
+      <% @alphabet.each do |letter| %>
+        <%= link_to letter, names_path(by_letter: letter), class: "btn btn-plain btn-letter" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="mb-5">
@@ -23,7 +23,7 @@
     <% end %>
   </div>
 
-  <div class="text-center">
+  <div class="text-sm-start text-center">
     <%= link_to "До списку всіх імен", names_path, class: "btn btn-action" %>
   </div>
 </div>
@@ -52,7 +52,7 @@
     </div>
   <% end %>
 
-  <div class="text-center mt-4">
+  <div class="text-sm-start text-center mt-4">
     <%= link_to "Більше Підбірок", selections_path, class: "btn btn-action" %>
   </div>
 </div>
@@ -93,7 +93,7 @@
     </div>
   </div>
 
-  <div class="text-center">
+  <div class="text-sm-start text-center">
     <%= link_to "Переглянути Всі", name_days_path, class: "btn btn-action" %>
   </div>
 </div>
@@ -103,7 +103,7 @@
 
   <%= render "posts/post_thumb" %>
 
-  <div class="text-center mt-4">
+  <div class="text-sm-start text-center mt-4">
     <%= link_to "Всі Пости", posts_path, class: "btn btn-action" %>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<h1 class="pt-3">Список Імен</h1>
+<h1 class="page-heading">Список Імен</h1>
 <div class="mb-5">
   <% @categories.each do |category| %>
     <%= link_to category, request.params.merge(by_category: category), class: "btn btn-plain" %>
