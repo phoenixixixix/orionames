@@ -65,6 +65,11 @@ h1 {
   padding-top: 15px;
 }
 
+.dropdown-menu {
+  max-height: 340px;
+  overflow-y: auto;
+}
+
 /*
 Wrappers styles
 */
@@ -94,9 +99,29 @@ Navbar styles
   margin-top: 11px;
 
   background-color: #F0F5F9 !important;
-  box-shadow: inset 5px 5px 5px #ccd0d4, inset -5px -5px 5px #ffffff;
+  box-shadow: inset 5px 5px 4px #dadfe3, inset -5px -5px 4px #ffffff;
   border-radius: 15px !important;
   border: 0 !important;
+}
+
+nav.navbar ul.navbar-nav a {
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+nav.navbar ul.navbar-nav a::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 2px;
+  background-color: #FF165D;
+  transform: scaleX(0);
+  transition: transform .35s ease;
+}
+nav.navbar ul.navbar-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 
@@ -110,6 +135,41 @@ Main page styles
 
 .list-group-item-selection {
   background-color: transparent !important;
+}
+
+
+/*
+Names styles
+*/
+
+.name-box {
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #ecf0f3;
+  transition: background-color 0.5s;
+}
+
+.name-box:hover {
+  background-color: #FCE38A;
+}
+
+.name-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.name-link:hover {
+  color: inherit;
+}
+
+.remove-filter-link {
+  text-decoration: underline;
+  color: inherit;
+  transition: color .2s;
+}
+
+.remove-filter-link:hover {
+  color: #ec0000;
 }
 
 
@@ -162,8 +222,18 @@ Buttons styles
 
 .btn-plain {
   color:  #535353 !important;
+  transition: color .2s !important;
+}
+
+.btn-plain:hover {
+  color: #FCE38A !important;
 }
 
 .btn-action {
   color:  #FF165D !important;
+  transition: color .2s !important;
+}
+
+.btn-action:hover {
+  color: #fc3887 !important;
 }
