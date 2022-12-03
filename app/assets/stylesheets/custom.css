@@ -47,6 +47,9 @@ p {
   font-size: 19px !important;
 }
 
+.post-wrapper h4, h3, h2, h1 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 
 /*
@@ -191,11 +194,47 @@ Name days Calendar styles
 Post styles
  */
 
-.post-thumb-img {
-  width: 100%;
-  height: 150px;
-  border-radius: 30px;
-  object-fit: cover;
+.post-wrapper {
+  width: 70%;
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .post-wrapper {
+    width: 100%;
+  }
+}
+
+.post-tag {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-tag:hover {
+  color: inherit;
+}
+
+.post-thumb-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-thumb-link .read-forward {
+  font-size: 16px !important;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.post-thumb {
+  padding: 30px;
+  border-bottom: 1px solid;
+  border-color: #BBBBBB;
+  transition: box-shadow .25s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+.post-thumb:hover {
+  box-shadow: 0 5px 20px -5px rgba(91, 91, 91, 0.6);
+  z-index: 1;
 }
 
 

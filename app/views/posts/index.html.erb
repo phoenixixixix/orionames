@@ -1,5 +1,7 @@
 <h1 class="page-heading">Блог Пости</h1>
 
-<%= render "post_thumb" %>
+<%= render "post_tags", tags: @all_tags %>
+
+<%= render partial: "post_thumb", collection: @posts, as: :post %>
 
 <%= link_to "Create new post", new_post_path %>

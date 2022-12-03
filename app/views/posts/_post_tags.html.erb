@@ -1,0 +1,9 @@
+<div class="row row-cols-auto">
+  <% tags.each do |tag| %>
+    <div class="col">
+      <%= link_to "#", class: "post-tag" do %>
+        <p>#<%= tag %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

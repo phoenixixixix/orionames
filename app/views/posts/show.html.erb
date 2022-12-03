@@ -1,14 +1,19 @@
-<h1><%= @post.title %></h1>
+<div class="post-wrapper">
+  <h1 class="page-heading"><%= @post.title %></h1>
 
-<% if @photo = get_unsplash_photo(@post.photo_token) %>
-  <%= image_tag @photo.urls.regular, class: "img-fluid" %>
-  <p class="text-center text-muted fst-italic fs-6">
-    Автор фото
-    <%= link_to @photo.user.name.titleize, "https://unsplash.com/@#{@photo.user.username}?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
-    з
-    <%= link_to "Unsplash", "https://unsplash.com/?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
-  </p>
-<% end %>
+  <%= render "post_tags", tags: @post.tags %>
 
-<p><%= markdown(@post.body) %></p>
-<%= link_to "Edit current post", edit_post_path(@post) %>
+  <% if @photo = get_unsplash_photo(@post.photo_token) %>
+    <%= image_tag @photo.urls.regular, class: "img-fluid" %>
+    <p class="text-center text-muted fst-italic fs-6">
+      Автор фото
+      <%= link_to @photo.user.name.titleize, "https://unsplash.com/@#{@photo.user.username}?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
+      з
+      <%= link_to "Unsplash", "https://unsplash.com/?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
+    </p>
+  <% end %>
+
+  <p><%= markdown(@post.body) %></p>
+
+  <%= link_to "Edit current post", edit_post_path(@post) %>
+</div>

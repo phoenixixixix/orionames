@@ -42,6 +42,6 @@ class PostsController < ApplicationController
   end
 
   def get_all_tags
-    @all_tags = ActsAsTaggableOn::Tag.select(:name)
+    @all_tags = ActsAsTaggableOn::Tag.distinct.select(:name)
   end
 end

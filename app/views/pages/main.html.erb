@@ -101,7 +101,7 @@
 <div class="main-page-block">
   <h1>Наш Блог</h1>
 
-  <%= render "posts/post_thumb" %>
+  <%= render partial: "posts/post_thumb", collection: @posts, as: :post %>
 
   <div class="text-sm-start text-center mt-4">
     <%= link_to "Всі Пости", posts_path, class: "btn btn-action" %>

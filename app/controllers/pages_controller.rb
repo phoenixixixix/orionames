@@ -10,6 +10,6 @@ class PagesController < ApplicationController
     @name_day_today = NameDay.celebration_today
     @name_day_tomorrow = NameDay.celebration_tomorrow
 
-    @posts = Post.select(:id, :title, :photo_token).last(3)
+    @posts = Post.last(3)
   end
 end
