@@ -7,10 +7,12 @@ module ApplicationHelper
   end
 
   def get_unsplash_photo(token)
+    return if token.present?
+
     begin
-      return Unsplash::Photo.find(token)
-    rescue SocketError, NoMethodError, Unsplash::NotFoundError
-      return nil
+      Unsplash::Photo.find(token)
+    rescue SocketError, NoMethodError, Unsplash::NotFoundError, Unsplash::Error
+      nil
     end
   end
 end
