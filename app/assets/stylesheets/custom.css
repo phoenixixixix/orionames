@@ -223,6 +223,29 @@ Post styles
   color: inherit;
 }
 
+#showMoreTags.collapse {
+  display: block;
+  height: 40px !important;
+  overflow: hidden;
+}
+
+#showMoreTags.collapse.show {
+  height: 100% !important;
+}
+
+#showMoreTags.collapsing {
+  min-height: 40px;
+  max-height: inherit !important;
+}
+
+.collapse-tags-link a.collapsed:before  {
+  content: '+';
+}
+
+.collapse-tags-link a:not(.collapsed):before {
+  content: '-';
+}
+
 .post-thumb-link {
   text-decoration: none;
   color: inherit;

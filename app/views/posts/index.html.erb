@@ -1,6 +1,13 @@
 <h1 class="page-heading">Блог Пости</h1>
 
-<%= render "post_tags", tags: @all_tags %>
+<div class="collapse" id="showMoreTags" aria-expanded="false">
+  <%= render "post_tags", tags: @all_tags %>
+</div>
+<p class="text-end collapse-tags-link">
+  <a class="collapsed" data-bs-toggle="collapse" href="#showMoreTags" role="button" aria-expanded="false" aria-controls="showMoreTags">
+    категорії
+  </a>
+</p>
 
 <%= render partial: "post_thumb", collection: @posts, as: :post %>
 
