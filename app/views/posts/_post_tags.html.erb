@@ -1,7 +1,7 @@
 <div class="row row-cols-auto">
   <% tags.each do |tag| %>
     <div class="col">
-      <%= link_to "#", class: "post-tag" do %>
+      <%= link_to posts_path(tag: tag.name), class: "post-tag" do %>
         <p>#<%= tag %></p>
       <% end %>
     </div>

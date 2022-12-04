@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :get_all_tags, except: :show
   def index
     @posts = Post.all
+    @posts = @posts.tagged_with(tag_param[:tag]) if tag_param[:tag]
   end
 
   def show; end
@@ -37,11 +38,15 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body, :tag_list, :photo_token)
   end
 
+  def tag_param
+    params.permit(:tag)
+  end
+
   def set_post
     @post = Post.find(params[:id])
   end
 
   def get_all_tags
-    @all_tags = ActsAsTaggableOn::Tag.distinct.select(:name)
+    @all_tags = ActsAsTaggableOn::Tag.all
   end
 end

@@ -1,4 +1,4 @@
-<h1 class="page-heading">Блог Пости</h1>
+<h1 class="page-heading">Блог Пости <%= "##{request.params[:tag]}" if request.params[:tag] %></h1>
 
 <div class="collapse" id="showMoreTags" aria-expanded="false">
   <%= render "post_tags", tags: @all_tags %>
