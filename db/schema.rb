@@ -10,9 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_091405) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_05_105204) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "famous_people_lists", force: :cascade do |t|
+    t.bigint "name_id"
+    t.string "names", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name_id"], name: "index_famous_people_lists_on_name_id"
+  end
 
   create_table "name_days", force: :cascade do |t|
     t.integer "day", null: false

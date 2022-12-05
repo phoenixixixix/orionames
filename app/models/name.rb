@@ -5,6 +5,7 @@ class Name < ApplicationRecord
 
   belongs_to :origin_country, optional: true
   has_one :wiki, dependent: :destroy
+  has_one :famous_people_list, dependent: :destroy
 
   accepts_nested_attributes_for :wiki
 
