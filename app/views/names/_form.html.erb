@@ -1,30 +1,49 @@
 <%= form_with model: @name do |f| %>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control"  %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.select :category, Name.categories.keys, {}, { class: "form-select" } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :origin_country_id %>
+        <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, { include_blank: true }, { class: "form-select" } %>
+      </div>
+    </div>
   </div>
 
-  <div class="form-group">
-    <%= f.label :category %>
-    <%= f.select :category, Name.categories.keys, {}, { class: "form-select" } %>
-  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="mt-3">Вікі: </h3>
 
-  <div class="form-group">
-    <%= f.label :origin_country_id %>
-    <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, { include_blank: true }, { class: "form-select" } %>
-  </div>
+      <%= f.fields_for :wiki do |wiki_form| %>
+        <div class="form-group">
+          <%= wiki_form.label :origin %>
+          <%= wiki_form.text_area :origin, size: "70x5", class: "form-control" %>
+        </div>
 
-  <%= f.fields_for :wiki do |wiki_form| %>
-    <div class="form-group">
-      <%= wiki_form.label :origin %>
-      <%= wiki_form.text_area :origin, size: "70x5", class: "form-control" %>
+        <div class="form-group">
+          <%= wiki_form.label :meaning %>
+          <%= wiki_form.text_area :meaning, size: "70x5", class: "form-control" %>
+        </div>
+      <% end %>
     </div>
 
-    <div class="form-group">
-      <%= wiki_form.label :meaning %>
-      <%= wiki_form.text_area :meaning, size: "70x5", class: "form-control" %>
-    </div>
-  <% end %>
+    <div class="col-md-6">
+      <h3 class="mt-3">Знаменитості: </h3>
 
-  <%= f.submit "Save", class: "btn btn-plain" %>
+      <%= f.fields_for :famous_people_list do |famous_people_f| %>
+        <%= famous_people_f.label :names %>
+        <%= famous_people_f.text_field :names, class: "form-control mb-1", multiple: true %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit "Save", class: "btn btn-plain mt-3" %>
 <% end %>

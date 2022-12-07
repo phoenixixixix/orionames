@@ -19,6 +19,7 @@ class NamesController < ApplicationController
   def new
     @name = Name.new
     @name.build_wiki
+    @name.build_famous_people_list
   end
 
   def create
@@ -34,7 +35,7 @@ class NamesController < ApplicationController
 
   def name_params
     params.require(:name).permit(:title, :category, :origin_country_id, 
-      wiki_attributes: [:origin, :meaning])
+      wiki_attributes: [:origin, :meaning], famous_people_list_attributes: [names: []])
   end
 
   def filter_params

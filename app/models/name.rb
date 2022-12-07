@@ -8,6 +8,7 @@ class Name < ApplicationRecord
   has_one :famous_people_list, dependent: :destroy
 
   accepts_nested_attributes_for :wiki
+  accepts_nested_attributes_for :famous_people_list
 
   enum category: { male: 0, female: 1}
 
