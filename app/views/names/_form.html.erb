@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= javascript_import_module_tag "names/dynamically_add_fields" %>
+<% end %>
+
 <%= form_with model: @name do |f| %>
   <div class="row">
     <div class="col-md-6">
@@ -39,8 +43,12 @@
       <h3 class="mt-3">Знаменитості: </h3>
 
       <%= f.fields_for :famous_people_list do |famous_people_f| %>
-        <%= famous_people_f.label :names %>
-        <%= famous_people_f.text_field :names, class: "form-control mb-1", multiple: true %>
+        <div id="famous_people_fields">
+          <%= famous_people_f.label :names %>
+          <%= famous_people_f.text_field :names, class: "form-control mb-1", multiple: true %>
+        </div>
+
+        <a id="add_famous_name" class="link-primary">+ додати імʼя</a>
       <% end %>
     </div>
   </div>
