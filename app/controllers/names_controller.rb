@@ -15,6 +15,7 @@ class NamesController < ApplicationController
 
   def show
     @wiki = @name.wiki
+    @famous_names = @name.famous_people_list&.names
   end
 
   def new

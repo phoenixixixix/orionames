@@ -68,10 +68,20 @@ h1 {
   padding-top: 15px;
 }
 
+
+/*
+Bootstrap improvements
+ */
+
 .dropdown-menu {
   max-height: 340px;
   overflow-y: auto;
 }
+
+.list-group-item {
+  background-color: transparent !important;
+}
+
 
 /*
 Wrappers styles
@@ -136,14 +146,25 @@ Main page styles
   margin-bottom: 80px;
 }
 
-.list-group-item-selection {
-  background-color: transparent !important;
-}
-
 
 /*
 Names styles
 */
+
+.name-wrapper {
+  width: 70%;
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .name-wrapper {
+    width: 100%;
+  }
+}
+
+.name-page-section {
+  margin-bottom: 48px;
+}
 
 .name-box {
   padding: 5px;

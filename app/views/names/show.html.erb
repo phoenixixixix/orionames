@@ -1,12 +1,48 @@
-<h1><%= @name.title %></h1>
-<p><%= @name.category %></p>
-<p><%= @name&.origin_country&.title %></p>
-<hr>
-<% if @wiki %>
-  <h3>Origin:</h3>
-  <p><%= @wiki.origin %></p>
-  <h3>Meaning:</h3>
-  <p><%= @wiki.meaning %></p>
-<% end %>
+<div class="name-wrapper">
+  <div class="name-page-section">
+    <h1 class="page-heading">Значення імені <%= @name.title %></h1>
+    <p class="mb-0">Стать: <%= link_to @name.category, names_path(by_category: @name.category) %></p>
+    <p>Країна походження: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.id) %></p>
+  </div>
+
+<!--  TODO: remove condition-->
+  <% if @wiki %>
+  <div class="name-page-section">
+    <h4>Походження</h4>
+    <p><%= markdown(@wiki.origin) %></p>
+
+    <h4 class="mt-5">Значення:</h4>
+    <p><%= markdown(@wiki.meaning) %></p>
+  </div>
+  <% end %>
+
+  <% if @famous_names %>
+    <div class="name-page-section">
+      <div class="col mb-3">
+        <h4 class="mb-3">Знамениті люди з імʼям <%= @name.title %></h4>
+        <ul class="list-group list-group-flush px-3">
+          <% @famous_names.each do |name| %>
+            <li class="list-group-item plain-text"><%= name %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="name-page-section">
+    <h4 class="mb-4">Схожі імена</h4>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
+      <% @name.similar_names.each do |name| %>
+        <div class="col text-center">
+          <%= link_to name_path(name), class: "name-link plain-text" do %>
+            <div class="name-box">
+              <%= name.title %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 <%= link_to "Edit Name", edit_name_path(@name) %>
+</div>

@@ -36,6 +36,10 @@ class Name < ApplicationRecord
     names
   end
 
+  def similar_names
+    Name.where(capital_letter: capital_letter, category: category).limit(5) - [self]
+  end
+
   private
 
   def populate_name_days
