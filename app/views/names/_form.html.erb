@@ -45,7 +45,12 @@
       <%= f.fields_for :famous_people_list do |famous_people_f| %>
         <div id="famous_people_fields">
           <%= famous_people_f.label :names %>
-          <%= famous_people_f.text_field :names, class: "form-control mb-1", multiple: true %>
+
+          <% if famous_names = @name.famous_people_list.names %>
+            <% famous_names.each do |famous_name| %>
+              <%= text_field_tag "name[famous_people_list_attributes][names][]", famous_name, class: "form-control mb-1" %>
+            <% end %>
+          <% end %>
         </div>
 
         <a id="add_famous_name" class="link-primary">+ додати імʼя</a>
