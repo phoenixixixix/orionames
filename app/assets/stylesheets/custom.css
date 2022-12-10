@@ -334,3 +334,29 @@ Buttons styles
 .btn-action:hover {
   color: #fc3887 !important;
 }
+
+/*
+Pagination styles
+ */
+
+.pagination {
+  display: block !important;
+  margin: 20px 0 20px auto;
+}
+
+.pagination a {
+  color: #535353;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  padding: 0 8px 0 8px;
+}
+
+.pagination span.page.current {
+  font-family: 'Montserrat', sans-serif;
+  color: #8f8f8f;
+}
+
+.pagination span.page.gap {
+  font-family: 'Montserrat', sans-serif;
+  color: #8f8f8f;
+}
