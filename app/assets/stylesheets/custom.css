@@ -201,6 +201,10 @@ Names styles
   color: #ec0000;
 }
 
+.remove-filter-link i {
+  text-decoration: underline;
+}
+
 
 /*
 Selections styles
@@ -293,6 +297,10 @@ Post styles
 .post-thumb:hover {
   box-shadow: 0 5px 20px -5px rgba(91, 91, 91, 0.6);
   z-index: 1;
+}
+
+.post-thumb i {
+  color: #f7c71f;
 }
 
 

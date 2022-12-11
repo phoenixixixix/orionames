@@ -49,7 +49,9 @@
   <div class="row row-cols-auto mb-3">
     <% @applied_filters.each do |param, value| %>
       <div class="col">
-        <%= link_to value, request.params.except(param), class: "remove-filter-link plain-text" %>
+        <%= link_to request.params.except(param), class: "remove-filter-link plain-text" do %>
+          <%= value %> <%= icon("fa-solid", "fa-xmark") %>
+        <% end %>
       </div>
     <% end %>
   </div>
