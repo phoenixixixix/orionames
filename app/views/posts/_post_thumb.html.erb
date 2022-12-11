@@ -2,7 +2,7 @@
   <%= link_to post_path(post), class: "post-thumb-link" do %>
     <div class="post-thumb">
       <h4 class="fs-lora"><%= icon("fa-solid", "fa-fire") if post.hot? %> <%= post.title %></h4>
-      <p><%= post.body[0..135] %>...</p>
+      <p><%= post.body[0..120] %>...</p>
       <p class="read-forward text-end">Читати далі</p>
     </div>
   <% end %>

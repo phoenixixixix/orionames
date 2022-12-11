@@ -5,4 +5,7 @@
       <li class="list-group-item"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
     <% end %>
   </ul>
+  <% if params[:controller] == "selections" && selection.post %>
+    <%= render "posts/post_thumb", post: selection.post %>
+  <% end %>
 </div>

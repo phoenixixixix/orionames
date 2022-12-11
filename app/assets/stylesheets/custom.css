@@ -301,7 +301,7 @@ Post styles
 .post-thumb {
   padding: 30px;
   border-bottom: 1px solid;
-  border-color: #BBBBBB;
+  border-color: #d2d6da;
   transition: box-shadow .25s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 
