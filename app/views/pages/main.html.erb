@@ -8,7 +8,7 @@
   </div>
 
   <div class="mb-5">
-    <h4 class="mb-3">За алфавітом</h4>
+    <h4 class="fs-lora mb-3">За алфавітом</h4>
     <div class="text-center">
       <% @alphabet.each do |letter| %>
         <%= link_to letter, names_path(by_letter: letter), class: "btn btn-plain btn-letter" %>
@@ -17,7 +17,7 @@
   </div>
 
   <div class="mb-5">
-    <h4 class="mb-3">За походженням</h4>
+    <h4 class="fs-lora mb-3">За походженням</h4>
     <% @origin_titles.each do |origin| %>
       <%= link_to origin, names_path(by_origin: origin), class: "btn btn-plain" %>
     <% end %>
@@ -44,7 +44,7 @@
   <h1>Календар Іменин</h1>
 
   <div class="mb-5">
-    <h4 class="mb-3">Вибрати за місяцем</h4>
+    <h4 class="fs-lora mb-3">Вибрати за місяцем</h4>
     <% @name_days_months.each do |month| %>
       <%= link_to month, name_days_path(by_month: month), class: "btn btn-plain" %>
     <% end %>
@@ -54,10 +54,10 @@
     <div class="col-md-6 mb-5">
       <div class="celebration-box">
         <% if @name_day_today %>
-          <h4 class="mb-3">Іменини сьогодні <%= @name_day_today.human_day_month %> відзначають:</h4>
+          <h4 class="fs-lora mb-3">Іменини сьогодні <%= @name_day_today.human_day_month %> відзначають:</h4>
           <p><%= @name_day_today.names_list.join(", ") %></p>
         <% else %>
-          <h4 class="mb-3">Іменини сьогоді</h4>
+          <h4 class="fs-lora mb-3">Іменини сьогоді</h4>
           <p>Відсутні</p>
         <% end %>
       </div>
@@ -66,10 +66,10 @@
     <div class="col-md-6 mb-5">
       <div class="celebration-box">
         <% if @name_day_tomorrow %>
-          <h4 class="mb-3">Іменини завтра <%= @name_day_tomorrow.human_day_month %>:</h4>
+          <h4 class="fs-lora mb-3">Іменини завтра <%= @name_day_tomorrow.human_day_month %>:</h4>
           <p><%= @name_day_tomorrow.names_list.join(", ") %></p>
         <% else %>
-          <h4 class="mb-3">Іменини завтра</h4>
+          <h4 class="fs-lora mb-3">Іменини завтра</h4>
           <p>Відсутні</p>
         <% end %>
       </div>

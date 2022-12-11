@@ -11,27 +11,8 @@ font-family: 'Rubik', sans-serif;
 Fonts setup
 */
 
-.nav-font {
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px !important;
-}
-
-.nav-link {
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px !important;
-}
-
-.nav-search {
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px !important;
-}
-
-h1 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
-}
-
-h4 {
-  font-family: 'Lora', serif;
 }
 
 p {
@@ -39,20 +20,47 @@ p {
   font-size: 18px !important;
 }
 
-.btn {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.plain-text {
+li {
   font-family: 'Rubik', sans-serif;
   font-size: 18px !important;
+}
+
+a {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px !important;
+}
+
+.fs-lora {
+  font-family: 'Lora', serif;
+}
+
+.nav-font {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px !important;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px !important;
 }
 
 .btn-action {
   font-size: 19px !important;
 }
 
-.post-wrapper h4, h3, h2, h1 {
+.post-thumb-link .read-forward {
+  font-size: 16px !important;
+}
+
+.pagination a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pagination span.page.current {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pagination span.page.gap {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -244,6 +252,10 @@ Post styles
   }
 }
 
+.post-wrapper a{
+  text-decoration: none;
+}
+
 .post-tag {
   text-decoration: none;
   color: inherit;
@@ -282,7 +294,6 @@ Post styles
 }
 
 .post-thumb-link .read-forward {
-  font-size: 16px !important;
   text-decoration: underline;
   margin: 0;
 }
@@ -354,17 +365,14 @@ Pagination styles
 
 .pagination a {
   color: #535353;
-  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   padding: 0 8px 0 8px;
 }
 
 .pagination span.page.current {
-  font-family: 'Montserrat', sans-serif;
   color: #8f8f8f;
 }
 
 .pagination span.page.gap {
-  font-family: 'Montserrat', sans-serif;
   color: #8f8f8f;
 }

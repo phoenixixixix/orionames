@@ -1,8 +1,8 @@
 <div class="col mb-5 ">
-  <h4 class="mb-3"><%= selection.title %></h4>
+  <h4 class="fs-lora mb-3"><%= selection.title %></h4>
   <ul class="list-group list-group-flush px-3">
     <% selection.names.each do |id, name| %>
-      <li class="list-group-item plain-text"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
+      <li class="list-group-item"> > <%= link_to name, name_path(id), class: "text-dark" %></li>
     <% end %>
   </ul>
 </div>

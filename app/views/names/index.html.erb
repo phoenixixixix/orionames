@@ -49,7 +49,7 @@
   <div class="row row-cols-auto mb-3">
     <% @applied_filters.each do |param, value| %>
       <div class="col">
-        <%= link_to request.params.except(param), class: "remove-filter-link plain-text" do %>
+        <%= link_to request.params.except(param), class: "remove-filter-link" do %>
           <%= value %> <%= icon("fa-solid", "fa-xmark") %>
         <% end %>
       </div>
@@ -63,7 +63,7 @@
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
       <% names.each do |name| %>
         <div class="col text-center">
-            <%= link_to name_path(name), class: "name-link plain-text" do %>
+            <%= link_to name_path(name), class: "name-link" do %>
               <div class="name-box">
                 <%= name.title %>
               </div>
