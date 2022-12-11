@@ -24,7 +24,7 @@ class Name < ApplicationRecord
   validate :fete_day_format
 
   scope :by_category, ->(category) { where(category: category) }
-  scope :by_origin, ->(origin) { where(origin_country: origin) }
+  scope :by_origin, ->(origin) { joins(:origin_country).where(origin_country: {title: origin}) }
   scope :by_letter, ->(letter) { where(capital_letter: letter) }
 
   def human_category

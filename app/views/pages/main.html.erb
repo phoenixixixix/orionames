@@ -18,8 +18,8 @@
 
   <div class="mb-5">
     <h4 class="mb-3">За походженням</h4>
-    <% @origin_countries.each do |origin| %>
-      <%= link_to origin.title, names_path(by_origin: origin.id), class: "btn btn-plain" %>
+    <% @origin_titles.each do |origin| %>
+      <%= link_to origin, names_path(by_origin: origin), class: "btn btn-plain" %>
     <% end %>
   </div>
 

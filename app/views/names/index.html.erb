@@ -37,8 +37,8 @@
         Походження
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-origin-countries">
-        <% @origin_countries.each do |origin| %>
-          <li><%= link_to origin.title, request.params.merge(by_origin: origin.id).except(:page), class: "dropdown-item" %></li>
+        <% @origin_titles.each do |origin| %>
+          <li><%= link_to origin, request.params.merge(by_origin: origin).except(:page), class: "dropdown-item" %></li>
         <% end %>
       </ul>
     </div>
@@ -49,11 +49,7 @@
   <div class="row row-cols-auto mb-3">
     <% @applied_filters.each do |param, value| %>
       <div class="col">
-        <% if param == "by_origin" %>
-          <%= link_to @selected_oc_title , request.params.except(param), class: "remove-filter-link plain-text" %>
-        <% else %>
-          <%= link_to value, request.params.except(param), class: "remove-filter-link plain-text" %>
-        <% end %>
+        <%= link_to value, request.params.except(param), class: "remove-filter-link plain-text" %>
       </div>
     <% end %>
   </div>

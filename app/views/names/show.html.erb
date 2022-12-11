@@ -2,7 +2,7 @@
   <div class="name-page-section">
     <h1 class="page-heading">Значення імені <%= @name.title %></h1>
     <p class="mb-0">Стать: <%= link_to @name.category, names_path(by_category: @name.category) %></p>
-    <p>Країна походження: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.id) %></p>
+    <p>Країна походження: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.title) %></p>
   </div>
 
 <!--  TODO: remove condition-->
