@@ -38,7 +38,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-origin-countries">
         <% @origin_countries.each do |origin| %>
-          <li><%= link_to origin.uk_title_plural, request.params.merge(by_origin: origin.id).except(:page), class: "dropdown-item" %></li>
+          <li><%= link_to origin.title, request.params.merge(by_origin: origin.id).except(:page), class: "dropdown-item" %></li>
         <% end %>
       </ul>
     </div>

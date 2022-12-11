@@ -2,10 +2,6 @@
 
 one:
   title: MyString
-  uk_title: MyString
-  uk_title_plural: MyString
 
 two:
   title: MyString
-  uk_title: MyString
-  uk_title_plural: MyString

@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def main
     @categories = Name.categories.keys
     @alphabet = Name::UK_LETTERS_LIST
-    @origin_countries = OriginCountry.select(:id, :uk_title_plural)
+    @origin_countries = OriginCountry.all
     
     @selections = Selection.take(2)
 

@@ -7,10 +7,10 @@ class NamesController < ApplicationController
 
     @categories = Name.categories.keys
     @alphabet = Name::UK_LETTERS_LIST
-    @origin_countries = OriginCountry.select(:id, :uk_title_plural)
+    @origin_countries = OriginCountry.all
 
     @applied_filters = filter_params
-    @selected_oc_title = @origin_countries.find(filter_params[:by_origin]).uk_title_plural if filter_params[:by_origin]
+    @selected_oc_title = @origin_countries.find(filter_params[:by_origin]).title if filter_params[:by_origin]
   end
 
   def show
