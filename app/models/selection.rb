@@ -4,6 +4,8 @@ class Selection < ApplicationRecord
   validates :title, presence: true
   validate :names_exactly_10
 
+  scope :pinned, ->{ where(pinned: true) }
+
   def ids_to_names_hash
     # Transform ids from params[:names] to hash
     self.names = Name.find(names).pluck(:id, :title).to_h

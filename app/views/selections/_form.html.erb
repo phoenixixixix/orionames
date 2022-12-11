@@ -6,11 +6,17 @@
         <%= f.text_field :title, class: "form-control" %>
       </div>
 
+      <div class="form-group my-2">
+        <%= f.label :pinned, "Прикріпити на головній?" %>
+        <%= f.check_box :pinned %>
+        <p class="fs-6 fst-italic">*Максимально 2 прикріплених (зараз прикріплено <%= Selection.pinned.count %>)</p>
+      </div>
+
       <div class="form-group">
         <%= f.label :names %>
         <%=
           f.collection_select :names,
-                              Name.order(:capital_letter),
+                              Name.order(:title),
                               :id, :title,
                               { include_hidden: false },
                               { multiple: true, size: 18, class: "form-select mb-2" }

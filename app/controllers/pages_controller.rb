@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @alphabet = Name::UK_LETTERS_LIST
     @origin_titles = OriginCountry.pluck(:title)
     
-    @selections = Selection.take(2)
+    @selections = Selection.pinned.limit(2)
 
     @name_days_months = NameDay.months.keys
     @name_day_today = NameDay.celebration_today
