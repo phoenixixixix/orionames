@@ -3,7 +3,7 @@ class NamesController < ApplicationController
 
   def index
     @names = filtered_names(Name.all, filter_params)
-    @names_hash = @names.group_by(&:capital_letter).sort_by { |letter, _| letter }.to_h
+    @names = @names.order(:capital_letter).page(params[:page])
 
     @categories = Name.categories.keys
     @alphabet = Name::UK_LETTERS_LIST

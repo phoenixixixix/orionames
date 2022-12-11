@@ -12,7 +12,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-category">
         <% @categories.each do |category| %>
-          <li><%= link_to category, request.params.merge(by_category: category), class: "dropdown-item" %></li>
+          <li><%= link_to category, request.params.merge(by_category: category).except(:page), class: "dropdown-item" %></li>
         <% end %>
       </ul>
     </div>
@@ -25,7 +25,7 @@
       </button>
         <ul class="dropdown-menu" aria-labelledby="dropdown-letter">
           <% @alphabet.each do |letter| %>
-            <li><%= link_to letter, request.params.merge(by_letter: letter), class: "dropdown-item" %></li>
+            <li><%= link_to letter, request.params.merge(by_letter: letter).except(:page), class: "dropdown-item" %></li>
           <% end %>
         </ul>
     </div>
@@ -38,7 +38,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-origin-countries">
         <% @origin_countries.each do |origin| %>
-          <li><%= link_to origin.uk_title_plural, request.params.merge(by_origin: origin.id), class: "dropdown-item" %></li>
+          <li><%= link_to origin.uk_title_plural, request.params.merge(by_origin: origin.id).except(:page), class: "dropdown-item" %></li>
         <% end %>
       </ul>
     </div>
@@ -59,7 +59,7 @@
   </div>
 <% end %>
 
-<% @names_hash.each do |letter, names| %>
+<% @names.group_by(&:capital_letter).each do |letter, names| %>
   <div class="mb-3">
     <h1><%= letter %></h1>
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
@@ -75,5 +75,7 @@
     </div>
   </div>
 <% end %>
+
+<%= paginate @names, window: 1 %>
 
 <%= link_to "Create new name", new_name_path %>

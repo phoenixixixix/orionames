@@ -1,4 +1,6 @@
 class Selection < ApplicationRecord
+  paginates_per 6
+
   validates :title, presence: true
   validate :names_exactly_10
 

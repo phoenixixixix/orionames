@@ -3,6 +3,8 @@ require "./lib/letters"
 class Name < ApplicationRecord
   include Letters
 
+  paginates_per 100
+
   belongs_to :origin_country, optional: true
   has_one :wiki, dependent: :destroy
   has_one :famous_people_list, dependent: :destroy

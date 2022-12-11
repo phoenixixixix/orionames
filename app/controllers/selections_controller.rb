@@ -1,6 +1,6 @@
 class SelectionsController < ApplicationController
   def index
-    @selections = Selection.all
+    @selections = Selection.page(params[:page])
   end
 
   def new

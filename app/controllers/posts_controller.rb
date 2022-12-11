@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @posts = @posts.tagged_with(tag_param[:tag]) if tag_param[:tag]
+
+    @posts = @posts.page(params[:page])
   end
 
   def show; end
