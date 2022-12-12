@@ -64,6 +64,10 @@ a {
   font-family: 'Montserrat', sans-serif;
 }
 
+.breadcrumbs {
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 18px !important;
+}
 
 /*
 HTML elements styles
@@ -374,5 +378,17 @@ Pagination styles
 }
 
 .pagination span.page.gap {
+  color: #8f8f8f;
+}
+
+/*
+Breadcrumbs styles
+ */
+
+.breadcrumbs {
+  color: #8f8f8f;
+}
+
+.breadcrumbs a {
   color: #8f8f8f;
 }

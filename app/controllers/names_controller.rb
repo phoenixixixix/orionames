@@ -1,5 +1,7 @@
 class NamesController < ApplicationController
   before_action :set_name, only: %w(show edit update)
+  add_breadcrumb "Головна", :root_path, only: %w(index show)
+  add_breadcrumb "Список Імен", :names_path, only: %w(index show)
 
   def index
     @names = filtered_names(Name.all, filter_params)
@@ -15,6 +17,8 @@ class NamesController < ApplicationController
   def show
     @wiki = @name.wiki
     @famous_names = @name.famous_people_list&.names
+
+    add_breadcrumb @name.title, name_path(@name)
   end
 
   def new

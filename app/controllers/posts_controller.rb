@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %w(show edit update)
   before_action :get_all_tags, except: :show
+  add_breadcrumb "Головна", :root_path, only: %w(index show)
+  add_breadcrumb "Блог", :posts_path, only: %w(index show)
+
   def index
     @posts = Post.all
     @posts = @posts.tagged_with(tag_param[:tag]) if tag_param[:tag]
@@ -8,7 +11,9 @@ class PostsController < ApplicationController
     @posts = @posts.page(params[:page])
   end
 
-  def show; end
+  def show
+    add_breadcrumb @post.title, post_path(@post)
+  end
 
   def new
     @post = Post.new
