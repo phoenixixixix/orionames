@@ -5,10 +5,10 @@ class NamesController < ApplicationController
 
   def index
     @names = filtered_names(Name.all, filter_params)
-    @names = @names.order(:capital_letter).page(params[:page])
+    @names = @names.order_by_capital_letter.page(params[:page])
 
     @categories = Name.categories.keys
-    @alphabet = Name::UK_LETTERS_LIST
+    @alphabet = Name::LETTERS_LIST
     @origin_titles = OriginCountry.pluck(:title)
 
     @applied_filters = filter_params

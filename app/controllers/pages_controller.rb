@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def main
     @categories = Name.categories.keys
-    @alphabet = Name::UK_LETTERS_LIST
+    @alphabet = Name::LETTERS_LIST
     @origin_titles = OriginCountry.pluck(:title)
     
     @selections = Selection.pinned.limit(2)

@@ -27,6 +27,19 @@ class Name < ApplicationRecord
   scope :by_origin, ->(origin) { joins(:origin_country).where(origin_country: {title: origin}) }
   scope :by_letter, ->(letter) { where(capital_letter: letter) }
 
+  # The below scope is designed to provide the correct order of letters in a specific alphabet.
+  # The issue I'm targeting: the ordinal number of some letters ("і", "є" in Ukrainian) does not correspond to the actual place index in the alphabet.
+  # The way the chars are placed in LETTERS_LIST's corresponds to a specific alphabet
+  scope :order_by_capital_letter, -> {
+    order_clause = "CASE capital_letter "
+    LETTERS_LIST.each_with_index do |letter, i|
+      order_clause << sanitize_sql_array(["WHEN ? THEN ? ", letter, i])
+    end
+
+    order_clause << sanitize_sql_array(["ELSE ? END", LETTERS_LIST.length])
+    order(Arel.sql(order_clause))
+  }
+
   def human_category
     I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{self.category}")
   end
