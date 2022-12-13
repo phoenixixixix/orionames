@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @posts = Post.all
     @posts = @posts.tagged_with(tag_param[:tag]) if tag_param[:tag]
 
-    @posts = @posts.page(params[:page])
+    @posts = @posts.order(created_at: :desc).page(params[:page])
   end
 
   def show
