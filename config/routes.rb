@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/main", to: "pages#main"
     
   resources :names
-  resources :name_days, only: :index
+  resources :name_days, except: :show
   resources :selections, except: :show
   resources :posts
 end

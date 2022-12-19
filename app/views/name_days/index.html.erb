@@ -1,1 +1,15 @@
 <h1 class="page-heading">Каледар Іменин</h1>
+
+<% @name_days.each do |name_day| %>
+  <div class="row">
+    <div class="col">
+      <h3 class="fs-lora"><%= name_day.day %> <%= name_day.month %></h3>
+    </div>
+    <div class="col">
+      <%= link_to "edit", edit_name_day_path(name_day) %>
+    </div>
+    <p><%= name_day.names_list.join(", ") %></p>
+  </div>
+<% end %>
+
+<%= link_to "add name day", new_name_day_path %>

@@ -1,0 +1,22 @@
+<%= form_with model: @name_day do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :day %>
+        <%= f.select :day, (1..31), {}, { class: "form-select" } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :month %>
+        <%= f.select :month, NameDay.months.keys, { include_blank: true }, { class: "form-select" } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :names_list, "Імена (розділені комою)" %>
+        <%= f.text_area :names_list, value: @name_day.names_list.join(", "), size: "70x5", class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.submit "Save", class: "btn btn-plain mt-4" %>
+<% end %>
