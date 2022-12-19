@@ -57,6 +57,7 @@ gem "unsplash"
 gem "kaminari"
 gem "font-awesome-sass", "~> 6.2.1"
 gem "breadcrumbs_on_rails"
+gem "whenever", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
