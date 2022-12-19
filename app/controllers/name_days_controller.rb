@@ -5,7 +5,7 @@ class NameDaysController < ApplicationController
   add_breadcrumb "Календар Іменин"
 
   def index
-    @name_days = NameDay.by_month(params[:month])
+    @name_days = NameDay.by_month(params[:month]).order(:day)
   end
 
   def new
