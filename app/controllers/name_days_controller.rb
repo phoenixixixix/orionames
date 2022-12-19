@@ -2,11 +2,10 @@ class NameDaysController < ApplicationController
   before_action :set_name_day, only: %w(edit update)
   before_action :sanitize_names_list, only: %w(create update)
   add_breadcrumb "Головна", :root_path, only: :index
-  add_breadcrumb "Календар Іменин", :name_days_path, only: :index
+  add_breadcrumb "Календар Іменин"
 
   def index
-    @name_days = NameDay.all
-    @name_days = @name_days.by_month(params[:by_month]) if params[:by_month]
+    @name_days = NameDay.by_month(params[:month])
   end
 
   def new
@@ -47,6 +46,6 @@ class NameDaysController < ApplicationController
   end
 
   def filter_params
-    params.permit(:by_month)
+    params.permit(:month)
   end
 end

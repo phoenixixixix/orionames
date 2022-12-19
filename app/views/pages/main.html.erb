@@ -45,9 +45,7 @@
 
   <div class="mb-5">
     <h4 class="fs-lora mb-3">Вибрати за місяцем</h4>
-    <% @name_days_months.each do |month| %>
-      <%= link_to month, name_days_path(by_month: month), class: "btn btn-plain" %>
-    <% end %>
+    <%= render "name_days/months" %>
   </div>
 
   <div class="row">

@@ -12,6 +12,8 @@ class NameDay < ApplicationRecord
 
   scope :by_month, ->(month) { where(month: month) }
 
+  DEFAULT_MONTH = "january"
+
   def self.celebration_today
     find_by(celebration_status: :today)
   end
