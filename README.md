@@ -1,24 +1,26 @@
-# README
+# Dependencies
+Ruby: 3.1.2  
+Rails: 7.0.4
+DB: PostgreSQL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Unsplash
+To load images in posts show page implemented using Unsplash API.
+* [Unsplash page for Orionames application](https://unsplash.com/oauth/applications/382703)
 
-Things you may want to cover:
 
-* Ruby version
+# Production Setup
 
-* System dependencies
+### Deployment
 
-* Configuration
+### Cron jobs
+Scheduling cron jobs implemented using the Whenever gem.
+Sett up by running commands:
 
-* Database creation
+* `whenever --update-crontab` to implement all cronjobs from schedule.rb
+* `crontab -l` to make sure jobs are set up
+* `whenever --clear-crontab` to remove scheduled jobs
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+> Note: If you run the whenever --update-crontab without 
+> passing the --user attribute, cron will be generated
+> by the current user. This mean tasks that needs other 
+> user permission will fail.
