@@ -52,7 +52,7 @@
     <div class="col-md-6 mb-5">
       <div class="celebration-box">
         <% if @name_day_today %>
-          <h4 class="fs-lora mb-3">Іменини сьогодні <%= @name_day_today.human_day_month %> відзначають:</h4>
+          <h4 class="fs-lora mb-3">Іменини сьогодні <%= @name_day_today.human_day_month %> святкують:</h4>
           <p><%= @name_day_today.names_list.join(", ") %></p>
         <% else %>
           <h4 class="fs-lora mb-3">Іменини сьогоді</h4>
@@ -64,7 +64,7 @@
     <div class="col-md-6 mb-5">
       <div class="celebration-box">
         <% if @name_day_tomorrow %>
-          <h4 class="fs-lora mb-3">Іменини завтра <%= @name_day_tomorrow.human_day_month %>:</h4>
+          <h4 class="fs-lora mb-3">Іменини завтра <%= @name_day_tomorrow.human_day_month %> святкують:</h4>
           <p><%= @name_day_tomorrow.names_list.join(", ") %></p>
         <% else %>
           <h4 class="fs-lora mb-3">Іменини завтра</h4>

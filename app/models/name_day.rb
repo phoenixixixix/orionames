@@ -22,6 +22,11 @@ class NameDay < ApplicationRecord
     find_by(celebration_status: :tomorrow)
   end
 
+  def self.refresh_celebration_status
+    celebrating = where(celebration_status: %w(today tomorrow))
+    celebrating.each { |name_day| name_day.empty! }
+  end
+
   def human_day_month
     "#{day} #{month}"
   end
