@@ -14,8 +14,8 @@ class Name < ApplicationRecord
 
   enum category: { male: 0, female: 1}
 
-  before_create -> { title.capitalize! }
-  before_create :populate_capital_letter
+  before_validation -> { title.capitalize! }, if: :title
+  before_save :set_capital_letter
 
   validates :title, presence: true, uniqueness: true
   validates :category, presence: true
@@ -54,7 +54,7 @@ class Name < ApplicationRecord
 
   private
 
-  def populate_capital_letter
+  def set_capital_letter
     self.capital_letter = title.first
   end
 end
