@@ -6,7 +6,7 @@ class NameDayTest < ActiveSupport::TestCase
     @name_day = NameDay.new(day: 2, month: 2, names_list: @sample_names_list)
   end
 
-  test "name day valid" do
+  test "valid name day" do
     assert @name_day.valid?
   end
 
@@ -18,8 +18,8 @@ class NameDayTest < ActiveSupport::TestCase
 
     refute @name_day.valid?
 
-    assert @name_day.errors[:day]
-    assert @name_day.errors[:month]
+    assert_not_empty @name_day.errors[:day]
+    assert_not_empty @name_day.errors[:month]
   end
 
   test "name day should be uniq depending on day and month" do
@@ -37,7 +37,7 @@ class NameDayTest < ActiveSupport::TestCase
 
     refute @name_day.valid?
 
-    assert @name_day.errors[:names_list]
+    assert_not_empty @name_day.errors[:names_list]
     assert_includes @name_day.errors[:names_list], "names list shouldn't be empty"
   end
 

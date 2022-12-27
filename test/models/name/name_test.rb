@@ -11,14 +11,14 @@ class NameTest < ActiveSupport::TestCase
     assert @name.valid?
   end
 
-  test "invalid without title and category" do
+  test "invalid without title or category" do
     @name.title = nil
     @name.category = nil
 
     refute @name.valid?
 
-    assert_not_nil @name.errors[:title]
-    assert_not_nil @name.errors[:category]
+    assert_not_empty @name.errors[:title]
+    assert_not_empty @name.errors[:category]
   end
 
   test "title uniqueness" do

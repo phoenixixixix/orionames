@@ -54,6 +54,6 @@ class PostsController < ApplicationController
   end
 
   def get_all_tags
-    @all_tags = ActsAsTaggableOn::Tag.all
+    @all_tags = Post.all_tags
   end
 end
