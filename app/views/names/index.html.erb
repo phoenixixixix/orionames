@@ -60,12 +60,12 @@
 <% @names.group_by(&:capital_letter).each do |letter, names| %>
   <div class="mb-3">
     <h1><%= letter %></h1>
-    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-5 g-3">
       <% names.each do |name| %>
         <div class="col text-center">
             <%= link_to name_path(name), class: "name-link" do %>
               <div class="name-box">
-                <%= name.title %>
+                <p class="name-title"><%= name.title %></p>
               </div>
             <% end %>
         </div>

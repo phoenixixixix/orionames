@@ -188,6 +188,15 @@ Names styles
   margin-bottom: 48px;
 }
 
+.name-title {
+  margin: 0;
+  width: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
 .name-box {
   padding: 5px;
   border-radius: 15px;
