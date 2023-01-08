@@ -69,6 +69,11 @@ a {
   font-size: 18px !important;
 }
 
+.removable-post-tag-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: inherit !important;
+}
+
 /*
 HTML elements styles
 */
@@ -316,6 +321,16 @@ Post styles
 
 .post-thumb i {
   color: #f7c71f;
+}
+
+.removable-post-tag-name {
+  text-decoration: none;
+  color: inherit;
+}
+
+.removable-post-tag-name:hover {
+  text-decoration: underline;
+  color: inherit;
 }
 
 
