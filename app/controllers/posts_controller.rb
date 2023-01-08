@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     add_breadcrumb @post.title, post_path(@post)
+    @photo = @post.get_unsplash_photo
   end
 
   def new

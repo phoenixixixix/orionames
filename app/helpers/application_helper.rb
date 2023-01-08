@@ -5,16 +5,6 @@ module ApplicationHelper
     Markdown.new(text, *options).to_html.html_safe
   end
 
-  def get_unsplash_photo(token)
-    return if token.present?
-
-    begin
-      Unsplash::Photo.find(token)
-    rescue SocketError, NoMethodError, Unsplash::NotFoundError, Unsplash::Error
-      nil
-    end
-  end
-
   def icon(style, title)
     "<i class=\"#{style} #{title}\"></i>".html_safe
   end
