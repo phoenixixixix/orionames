@@ -23,6 +23,6 @@ class SelectionsController < ApplicationController
   private
 
   def selection_params
-    params.require(:selection).permit(:title, :pinned, names: [])
+    params.require(:selection).permit(:title, :post_id, :pinned, names: [])
   end
 end
