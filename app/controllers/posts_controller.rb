@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %w(show edit update)
   before_action :get_all_tags, except: :show
-  add_breadcrumb "Головна", :root_path, only: %w(index show)
-  add_breadcrumb "Блог", :posts_path, only: %w(index show)
+  add_breadcrumb I18n.t("breadcrumbs.main_page"), :root_path, only: %w(index show)
+  add_breadcrumb I18n.t("breadcrumbs.blog_posts"), :posts_path, only: %w(index show)
 
   def index
     @posts = Post.all

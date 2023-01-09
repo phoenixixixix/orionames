@@ -1,5 +1,5 @@
 <% if @applied_filters.empty? %>
-  <h1 class="page-heading">Всі Імена</h1>
+  <h1 class="page-heading"><%= t ".heading.all_names" %></h1>
 <% else %>
   <h1 class="page-heading"><%= build_heading_from_filters(@applied_filters) %></h1>
 <% end %>
@@ -8,7 +8,7 @@
   <div class="col">
     <div class="dropdown">
       <button class="btn btn-plain dropdown-toggle" type="button" id="dropdown-category" data-bs-toggle="dropdown" aria-expanded="false">
-        Cтать
+        <%= t ".filters.gender" %>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-category">
         <% @categories.each do |category| %>
@@ -21,7 +21,7 @@
   <div class="col">
     <div class="dropdown">
       <button class="btn btn-plain dropdown-toggle" type="button" id="dropdown-letter" data-bs-toggle="dropdown" aria-expanded="false">
-        Буква
+        <%= t ".filters.letter" %>
       </button>
         <ul class="dropdown-menu" aria-labelledby="dropdown-letter">
           <% @alphabet.each do |letter| %>
@@ -34,7 +34,7 @@
   <div class="col">
     <div class="dropdown">
       <button class="btn btn-plain dropdown-toggle" type="button" id="dropdown-origin-countries" data-bs-toggle="dropdown" aria-expanded="false">
-        Походження
+        <%= t ".filters.origin" %>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdown-origin-countries">
         <% @origin_titles.each do |origin| %>

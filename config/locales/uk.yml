@@ -1,0 +1,110 @@
+uk:
+  activerecord:
+    models:
+      famous_people_list: Список знаменитих людей
+      name: Імʼя
+      name_day: Іменини
+      origin_country: Країна походження
+      post: Пости
+      selection: Підбірка
+      wiki: Вікі
+    attributes:
+      famous_people_list:
+        names: Імена
+      name:
+        title: Назва
+        category: Категорія
+        categories:
+          male: Чоловічі
+          female: Жіночі
+        capital_letter: Заголовна літера
+        origin_country_id: Країна походження
+      wiki:
+        origin: Походження
+        meaning: Значення
+
+# Enums
+  enum:
+    name_category:
+      male: Чоловічі
+      female: Жіночі
+
+# Controllers
+  breadcrumbs:
+    main_page: Головна
+    names_list: Список Імен
+    name_days: Календар Іменин
+    selections: Підбірки
+    blog_posts: Блог
+
+# Views
+  shared:
+    navbar:
+      names_list: Список Імен
+      selections: Підбірки
+      name_days: Календар Іменин
+      blog_posts: Блог
+      search: Пошук
+    footer:
+      names_list: Список Імен
+      selections: Підбірки
+      name_days: Календар Іменин
+      blog_posts: Блог
+      main_page: Головна Сторінка
+      about: Про Ресурс
+      privacy_policy: Політика Приватності
+      site_map: Карта Сайту
+  pages:
+    main:
+      name_filters: Фільтри Імен
+      by_letter: За алфавітом
+      by_origin: За походженням
+      selections: Підбірки
+      name_days: Календар Іменин
+      by_month: Вибрати за місяцем
+      recent_blog_posts: Останні Публікації
+      buttons:
+        more_names: До списку всіх імен
+        more_selections: Більше підбірок
+        more_name_days: Переглянути календар
+        more_blog_posts: Більше публікацій
+  names:
+    index:
+      heading:
+        all_names: Всі Імена
+        names: імена
+        with_letter: на букву
+      filters:
+        gender: Стать
+        letter: Буква
+        origin: Походження
+    show:
+      header:
+        heading: Значення імені
+        gender: Стать
+        origin_country: Країна походження
+      body:
+        wiki_origin: Походження
+        wiki_meaning: Значення
+        famous_people: Знамениті люди з імʼям
+        similar_names: Схожі імена
+  name_days:
+    index:
+      heading: Каледар Іменин на
+  selections:
+    index:
+      heading: Підбірки Імен
+  posts:
+    index:
+      heading: Блог Пости
+      tags: категорії
+    show:
+      photo_by: Автор фото
+      on: з
+    post_thumb:
+      read_more: Читати далі
+  kaminari:
+    next_page:
+      next: Наст.
+    prev_page:
+      prev: Поперед.

@@ -1,5 +1,5 @@
 <div class="main-page-block">
-  <h1 class="page-heading">Фільтри Імен</h1>
+  <h1 class="page-heading"><%= t ".name_filters" %></h1>
 
   <div class="mb-5">
     <% @categories.each do |category| %>
@@ -8,7 +8,7 @@
   </div>
 
   <div class="mb-5">
-    <h4 class="fs-lora mb-3">За алфавітом</h4>
+    <h4 class="fs-lora mb-3"><%= t ".by_letter" %></h4>
     <div class="text-center">
       <% @alphabet.each do |letter| %>
         <%= link_to letter, names_path(by_letter: letter), class: "btn btn-plain btn-letter" %>
@@ -17,34 +17,34 @@
   </div>
 
   <div class="mb-5">
-    <h4 class="fs-lora mb-3">За походженням</h4>
+    <h4 class="fs-lora mb-3"><%= t ".by_origin" %></h4>
     <% @origin_titles.each do |origin| %>
       <%= link_to origin, names_path(by_origin: origin), class: "btn btn-plain" %>
     <% end %>
   </div>
 
   <div class="text-sm-start text-center">
-    <%= link_to "До списку всіх імен", names_path, class: "btn btn-action" %>
+    <%= link_to t(".buttons.more_names"), names_path, class: "btn btn-action" %>
   </div>
 </div>
 
 <div class="main-page-block">
-  <h1>Підбірки</h1>
+  <h1><%= t ".selections" %></h1>
 
   <div class="row row-cols-md-2">
     <%= render partial: "selections/selection", collection: @selections %>
   </div>
 
   <div class="text-sm-start text-center">
-    <%= link_to "Більше Підбірок", selections_path, class: "btn btn-action" %>
+    <%= link_to t(".buttons.more_selections"), selections_path, class: "btn btn-action" %>
   </div>
 </div>
 
 <div class="main-page-block">
-  <h1>Календар Іменин</h1>
+  <h1><%= t ".name_days" %></h1>
 
   <div class="mb-5">
-    <h4 class="fs-lora mb-3">Вибрати за місяцем</h4>
+    <h4 class="fs-lora mb-3"><%= t ".by_month" %></h4>
     <%= render "name_days/months" %>
   </div>
 
@@ -75,16 +75,16 @@
   </div>
 
   <div class="text-sm-start text-center">
-    <%= link_to "Переглянути Всі", name_days_path, class: "btn btn-action" %>
+    <%= link_to t(".buttons.more_name_days"), name_days_path, class: "btn btn-action" %>
   </div>
 </div>
 
 <div class="main-page-block-last">
-  <h1>Останні Публікації</h1>
+  <h1><%= t ".recent_blog_posts" %></h1>
 
   <%= render partial: "posts/post_thumb", collection: @posts, as: :post %>
 
   <div class="text-sm-start text-center mt-5">
-    <%= link_to "Всі Пости", posts_path, class: "btn btn-action" %>
+    <%= link_to t(".buttons.more_blog_posts"), posts_path, class: "btn btn-action" %>
   </div>
 </div>

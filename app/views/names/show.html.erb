@@ -1,17 +1,19 @@
 <div class="name-wrapper">
   <div class="name-page-section">
-    <h1 class="page-heading">Значення імені <%= @name.title %></h1>
-    <p class="mb-0">Стать: <%= link_to @name.category, names_path(by_category: @name.category) %></p>
-    <p>Країна походження: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.title) %></p>
+    <h1 class="page-heading"><%= t ".header.heading" %> <%= @name.title %></h1>
+    <p class="mb-0"><%= t ".header.gender" %>: <%= link_to @name.category, names_path(by_category: @name.category) %></p>
+    <% if @name.origin_country %>
+      <p><%= t ".header.origin_country" %>: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.title) %></p>
+    <% end %>
   </div>
 
 <!--  TODO: remove condition-->
   <% if @wiki %>
   <div class="name-page-section">
-    <h4>Походження</h4>
+    <h4><%= t ".body.wiki_origin" %></h4>
     <p><%= markdown(@wiki.origin) %></p>
 
-    <h4 class="mt-5">Значення:</h4>
+    <h4 class="mt-5"><%= t ".body.wiki_meaning" %></h4>
     <p><%= markdown(@wiki.meaning) %></p>
   </div>
   <% end %>
@@ -19,7 +21,7 @@
   <% if @famous_names %>
     <div class="name-page-section">
       <div class="col mb-3">
-        <h4 class="mb-3">Знамениті люди з імʼям <%= @name.title %></h4>
+        <h4 class="mb-3"><%= t ".body.famous_people" %> <%= @name.title %></h4>
         <ul class="list-group list-group-flush px-3">
           <% @famous_names.each do |name| %>
             <li class="list-group-item"><%= name %></li>
@@ -30,7 +32,7 @@
   <% end %>
 
   <div class="name-page-section">
-    <h4 class="mb-4">Схожі імена</h4>
+    <h4 class="mb-4"><%= t ".body.similar_names" %></h4>
     <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
       <% @name.similar_names.each do |name| %>
         <div class="col text-center">

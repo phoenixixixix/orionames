@@ -3,7 +3,7 @@
     <div class="post-thumb">
       <h4 class="fs-lora"><%= icon("fa-solid", "fa-fire") if post.hot? %> <%= post.title %></h4>
       <p><%= post.body[0..120] %>...</p>
-      <p class="read-forward text-end">Читати далі</p>
+      <p class="read-forward text-end"><%= t ".read_more" %></p>
     </div>
   <% end %>
 </div>

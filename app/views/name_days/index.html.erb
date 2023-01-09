@@ -1,4 +1,4 @@
-<h1 class="page-heading">Каледар Іменин на <%= params[:month] %></h1>
+<h1 class="page-heading"><%= t ".heading" %> <%= params[:month] %></h1>
 <%= render "months" %>
 
 <% @name_days.each do |name_day| %>

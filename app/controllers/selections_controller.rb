@@ -1,6 +1,6 @@
 class SelectionsController < ApplicationController
-  add_breadcrumb "Головна", :root_path, only: :index
-  add_breadcrumb "Підбірки", :selections_path, only: :index
+  add_breadcrumb I18n.t("breadcrumbs.main_page"), :root_path, only: :index
+  add_breadcrumb I18n.t("breadcrumbs.selections"), :selections_path, only: :index
   def index
     @selections = Selection.order(created_at: :desc).page(params[:page])
   end

@@ -7,5 +7,5 @@
     remote:        data-remote
 -%>
 <span class="prev">
-  <%= link_to_unless current_page.first?, "Поперед.", url, rel: 'prev', remote: remote %>
+  <%= link_to_unless current_page.first?, t(".prev"), url, rel: 'prev', remote: remote %>
 </span>

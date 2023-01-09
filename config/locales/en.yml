@@ -36,3 +36,83 @@ en:
         categories:
           male: Male
           female: Female
+
+# Controllers
+  breadcrumbs:
+    main_page: Main Page
+    names_list: Names List
+    name_days: Name Days
+    selections: Selections
+    blog_posts: Blog
+
+# Views
+  shared:
+    navbar:
+      names_list: Names List
+      selections: Selections
+      name_days: Name Days
+      blog_posts: Blog
+      search: Search
+    footer:
+      names_list: Names List
+      selections: Selections
+      name_days: Name Days
+      blog_posts: Blog
+      main_page: Main Page
+      about: About
+      privacy_policy: Privacy Policy
+      site_map: Site Map
+  pages:
+    main:
+      name_filters: Name Filters
+      by_letter: By letter
+      by_origin: By origin
+      selections: Selections
+      name_days: Name Days
+      by_month: By month
+      recent_blog_posts: Recent Publications
+      buttons:
+        more_names: More names
+        more_selections: More names
+        more_name_days: Check calendar
+        more_blog_posts: More publications
+  names:
+    index:
+      heading:
+        all_names: All Names
+        names: names
+        with_letter: with letter
+      filters:
+        gender: Gender
+        letter: Letter
+        origin: Origin
+    show:
+      header:
+        heading: Meaning of the name
+        gender: Gender
+        origin_country: Origin country
+      body:
+        wiki_origin: Origin
+        wiki_meaning: Meaning
+        famous_people: Famous people with the name
+        similar_names: Similar names
+  name_days:
+    index:
+      heading: Calendar on
+  selections:
+    index:
+      heading: Names Selections
+  posts:
+    index:
+      heading: Blog Posts
+      tags: categories
+    show:
+      photo_by: Photo by
+      on: on
+    post_thumb:
+      read_more: Read more
+  kaminari:
+    next_page:
+      next: Next
+    prev_page:
+      prev: Prev

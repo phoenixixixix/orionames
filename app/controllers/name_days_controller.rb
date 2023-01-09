@@ -1,8 +1,8 @@
 class NameDaysController < ApplicationController
   before_action :set_name_day, only: %w(edit update)
   before_action :sanitize_names_list, only: %w(create update)
-  add_breadcrumb "Головна", :root_path, only: :index
-  add_breadcrumb "Календар Іменин"
+  add_breadcrumb I18n.t("breadcrumbs.main_page"), :root_path, only: :index
+  add_breadcrumb I18n.t("breadcrumbs.name_days")
 
   def index
     @name_days = NameDay.by_month(params[:month]).order(:day)

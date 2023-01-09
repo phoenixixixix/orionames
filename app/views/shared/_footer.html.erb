@@ -12,19 +12,19 @@
 
     <div class="col">
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><%= link_to "Список Імен", names_path, class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Підбірки", selections_path, class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Календар Іменин", name_days_path, class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Блог", posts_path, class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".names_list"), names_path, class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".name_days"), name_days_path, class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".selections"), selections_path, class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".blog_posts"), posts_path, class: "nav-link nav-font p-0 text-dark" %></li>
       </ul>
     </div>
 
     <div class="col">
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><%= link_to "Головна Сторінка", main_path, class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Про Ресурс", "#", class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Політика Приватності", "#", class: "nav-link nav-font p-0 text-dark" %></li>
-        <li class="nav-item mb-2"><%= link_to "Карта Сайту", "#", class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".main_page"), main_path, class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".about"), "#", class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".privacy_policy"), "#", class: "nav-link nav-font p-0 text-dark" %></li>
+        <li class="nav-item mb-2"><%= link_to t(".site_map"), "#", class: "nav-link nav-font p-0 text-dark" %></li>
       </ul>
     </div>
   </footer>

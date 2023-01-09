@@ -1,7 +1,7 @@
 class NamesController < ApplicationController
   before_action :set_name, only: %w(show edit update)
-  add_breadcrumb "Головна", :root_path, only: %w(index show)
-  add_breadcrumb "Список Імен", :names_path, only: %w(index show)
+  add_breadcrumb I18n.t("breadcrumbs.main_page"), :root_path, only: %w(index show)
+  add_breadcrumb I18n.t("breadcrumbs.names_list"), :names_path, only: %w(index show)
 
   def index
     @names = filtered_names(Name.all, filter_params)

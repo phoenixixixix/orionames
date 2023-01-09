@@ -6,9 +6,9 @@
   <% if @photo %>
     <%= image_tag @photo.urls.regular, class: "img-fluid" %>
     <p class="text-center text-muted fst-italic fs-6">
-      Автор фото
+      <%= t ".photo_by" %>
       <%= link_to @photo.user.name.titleize, "https://unsplash.com/@#{@photo.user.username}?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
-      з
+      <%= t ".on" %>
       <%= link_to "Unsplash", "https://unsplash.com/?utm_source=orionames&utm_medium=referral", class: "link-dark"%>
     </p>
   <% end %>
