@@ -1,7 +1,7 @@
 <div class="name-wrapper">
   <div class="name-page-section">
     <h1 class="page-heading"><%= t ".header.heading" %> <%= @name.title %></h1>
-    <p class="mb-0"><%= t ".header.gender" %>: <%= link_to @name.category, names_path(by_category: @name.category) %></p>
+    <p class="mb-0"><%= t ".header.gender" %>: <%= link_to Name.human_enum_name("category", @name.category), names_path(by_category: @name.category) %></p>
     <% if @name.origin_country %>
       <p><%= t ".header.origin_country" %>: <%= link_to @name.origin_country.title, names_path(by_origin: @name.origin_country.title) %></p>
     <% end %>

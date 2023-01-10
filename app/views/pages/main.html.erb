@@ -3,7 +3,7 @@
 
   <div class="mb-5">
     <% @categories.each do |category| %>
-      <%= link_to category, names_path(by_category: category), class: "btn btn-plain" %>
+      <%= link_to Name.human_enum_name("category", category), names_path(by_category: category), class: "btn btn-plain" %>
     <% end %>
   </div>
 

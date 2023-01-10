@@ -1,7 +1,13 @@
 module NamesHelper
   def link_to_with_filter_multiplier(param_key, param_value, **html_options)
     # except :page parameter to avoid pages without names
-    link_to param_value, request.params.merge("#{param_key}" => param_value).except(:page), class: html_options[:class]
+    if param_key.to_s == "by_category"
+      link_to Name.human_enum_name(param_key, param_value),
+              request.params.merge("#{param_key}" => param_value).except(:page),
+              class: html_options[:class]
+    else
+      link_to param_value, request.params.merge("#{param_key}" => param_value).except(:page), class: html_options[:class]
+    end
   end
 
   def build_heading_from_filters(filters)

@@ -50,7 +50,11 @@
     <% @applied_filters.each do |param, value| %>
       <div class="col">
         <%= link_to request.params.except(param), class: "remove-filter-link" do %>
-          <%= value %> <%= icon("fa-solid", "fa-xmark") %>
+          <% if param == "by_category" %>
+            <%= Name.human_enum_name("category", value) %> <%= icon("fa-solid", "fa-xmark") %>
+          <%  else %>
+            <%= value %> <%= icon("fa-solid", "fa-xmark") %>
+          <% end %>
         <% end %>
       </div>
     <% end %>

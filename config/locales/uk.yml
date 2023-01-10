@@ -19,15 +19,23 @@ uk:
           female: Жіночі
         capital_letter: Заголовна літера
         origin_country_id: Країна походження
+      name_day:
+        months:
+          january: Січень
+          february: Лютий
+          march: Березень
+          april: Квітень
+          may: Травень
+          june: Червень
+          july: Липень
+          august: Серпень
+          september: Вересень
+          october: Жовтень
+          november: Листопад
+          december: Грудень
       wiki:
         origin: Походження
         meaning: Значення
-
-# Enums
-  enum:
-    name_category:
-      male: Чоловічі
-      female: Жіночі
 
 # Controllers
   breadcrumbs:
