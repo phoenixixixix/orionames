@@ -15,5 +15,8 @@
 
   <p><%= markdown(@post.body) %></p>
 
+  <h3 class="mt-5"><%= t ".next_post" %></h3>
+  <%= render "post_thumb", post: @post.next_post %>
+
   <%= link_to "Edit current post", edit_post_path(@post) %>
 </div>

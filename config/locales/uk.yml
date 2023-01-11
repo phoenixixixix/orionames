@@ -157,6 +157,7 @@ uk:
     show:
       photo_by: Автор фото
       on: з
+      next_post: Наступна публікація
     post_thumb:
       read_more: Читати далі
   kaminari:

@@ -137,6 +137,7 @@ en:
     show:
       photo_by: Photo by
       on: on
+      next_post: Next publication
     post_thumb:
       read_more: Read more
   kaminari:

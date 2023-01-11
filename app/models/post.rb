@@ -13,4 +13,8 @@ class Post < ApplicationRecord
   rescue SocketError, NoMethodError, Unsplash::NotFoundError, Unsplash::Error
     nil
   end
+
+  def next_post
+    Post.where("id < ?", id).order(id: :desc).first || Post.order(created_at: :desc).first
+  end
 end

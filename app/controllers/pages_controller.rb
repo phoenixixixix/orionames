@@ -10,6 +10,6 @@ class PagesController < ApplicationController
     @name_day_today = NameDay.celebration_today
     @name_day_tomorrow = NameDay.celebration_tomorrow
 
-    @posts = Post.last(3)
+    @posts = Post.order(created_at: :desc).first(3)
   end
 end
