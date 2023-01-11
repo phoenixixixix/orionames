@@ -51,6 +51,20 @@ en:
           november: November
           december: December
 
+    errors:
+      models:
+        name_day:
+          attributes:
+            base:
+              existing: Name Day already exist
+            names_list:
+              empty: names list should not be empty
+        selection:
+          attributes:
+            names:
+              names_exactly_10: names should be exactly 10
+              numeric_key_in_names: keys should be in numeric format
+
 # Controllers
   breadcrumbs:
     main_page: Main Page

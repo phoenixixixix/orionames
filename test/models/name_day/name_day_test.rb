@@ -29,7 +29,7 @@ class NameDayTest < ActiveSupport::TestCase
     refute not_uniq_nd.valid?
 
     assert_equal [@name_day.day, @name_day.month], [not_uniq_nd.day, not_uniq_nd.month]
-    assert_includes not_uniq_nd.errors[:base], "Name Day already exists"
+    assert_includes not_uniq_nd.errors[:base], I18n.t(:existing, scope: "activerecord.errors.models.name_day.attributes.base")
   end
 
   test "a name day names list should not be empty" do
@@ -38,7 +38,7 @@ class NameDayTest < ActiveSupport::TestCase
     refute @name_day.valid?
 
     assert_not_empty @name_day.errors[:names_list]
-    assert_includes @name_day.errors[:names_list], "names list shouldn't be empty"
+    assert_includes @name_day.errors[:names_list], I18n.t(:empty, scope: "activerecord.errors.models.name_day.attributes.names_list")
   end
 
   # Callbacks

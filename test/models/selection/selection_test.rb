@@ -25,7 +25,7 @@ class SelectionTest < ActiveSupport::TestCase
     @selection.names = { "string" => "invalid" }
 
     refute @selection.valid?
-    assert_includes @selection.errors[:names], "Hash keys should be numeric"
+    assert_includes @selection.errors[:names], I18n.t(:numeric_key_in_names, scope: "activerecord.errors.models.selection.attributes.names")
   end
 
   test "invalid when names size less than 10" do
@@ -36,7 +36,7 @@ class SelectionTest < ActiveSupport::TestCase
 
     assert_not @selection.valid?
     assert_not_equal 10, @selection.names.size
-    assert_includes @selection.errors[:names], "Names number should be exactly 10"
+    assert_includes @selection.errors[:names], I18n.t(:names_exactly_10, scope: "activerecord.errors.models.selection.attributes.names")
   end
 
   test "invalid when names size more than 10" do
@@ -47,7 +47,7 @@ class SelectionTest < ActiveSupport::TestCase
 
     assert_not @selection.valid?
     assert_not_equal 10, @selection.names.size
-    assert_includes @selection.errors[:names], "Names number should be exactly 10"
+    assert_includes @selection.errors[:names], I18n.t(:names_exactly_10, scope: "activerecord.errors.models.selection.attributes.names")
   end
 
   # Methods

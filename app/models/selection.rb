@@ -17,14 +17,14 @@ class Selection < ApplicationRecord
   private
 
   def names_exactly_10
-    errors.add(:names, "Names number should be exactly 10") if names.count != 10
+    errors.add(:names, :names_exactly_10) if names.count != 10
   end
 
   def numeric_key_in_names
     return unless names
     names.each do |id, _|
       if id.match?(/\D/)
-        errors.add(:names, "Hash keys should be numeric")
+        errors.add(:names, :numeric_key_in_names)
         break
       end
     end

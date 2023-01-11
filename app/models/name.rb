@@ -37,10 +37,6 @@ class Name < ApplicationRecord
     order(Arel.sql(order_clause))
   }
 
-  def human_category
-    I18n.t("activerecord.attributes.#{model_name.i18n_key}.categories.#{self.category}")
-  end
-
   def self.apply_filters(filters_hash)
     names = self
     filters_hash.each { |by_filter, value| names = names.public_send(by_filter, value) }

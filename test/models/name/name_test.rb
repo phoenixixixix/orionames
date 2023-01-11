@@ -27,7 +27,7 @@ class NameTest < ActiveSupport::TestCase
 
     refute @name.valid?
 
-    assert_includes @name.errors[:title], "has already been taken"
+    assert_not_empty @name.errors[:title]
   end
 
   # Callbacks

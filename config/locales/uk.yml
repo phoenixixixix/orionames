@@ -37,6 +37,54 @@ uk:
         origin: Походження
         meaning: Значення
 
+    errors:
+      models:
+        name:
+          attributes:
+            title:
+              taken: імʼя вже існує
+              blank: назва не можу бути пуста
+              too_long: назва надто довга (максимум %{count} символів)
+            category:
+              blank: категорія не можу бути пуста
+        name_day:
+          attributes:
+            day:
+              blank: число повинно бути
+            month:
+              blank: місяць повинен бути
+            base:
+              existing: Ця Календарна дата вже існує
+            names_list:
+              empty: cписок імен не може бути пустий
+        origin_country:
+          attributes:
+            title:
+              blank: назва не може бути пуста
+        post:
+          attributes:
+            title:
+              blank: назва не можу бути пуста
+              too_long: назва надто довга (максимум %{count} символів)
+            body:
+              blank: контент не можу бути пустим
+              too_long: контент надто довгий (максимум %{count} символів)
+        selection:
+          attributes:
+            title:
+              blank: назва не можу бути пуста
+            names:
+              names_exactly_10: кількість імени повинна бути саме 10
+              numeric_key_in_names: ключі повинні бути цифрами
+        wiki:
+          attributes:
+            origin:
+              blank: походження не може бути пустим
+              too_long: контент походження надто довгий (максимум %{count} символів)
+            meaning:
+              blank: значення не може бути пустим
+              too_long: контент значення надто довгий (максимум %{count} символів)
+
 # Controllers
   breadcrumbs:
     main_page: Головна

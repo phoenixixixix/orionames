@@ -34,11 +34,11 @@ class NameDay < ApplicationRecord
   private
 
   def name_day_uniqueness
-    errors.add(:base, "Name Day already exists") if NameDay.find_by(day: day, month: month)
+    errors.add(:base, :existing) if NameDay.find_by(day: day, month: month)
   end
 
   def names_list_fullness
-    errors.add(:names_list, "names list shouldn't be empty") if names_list.empty?
+    errors.add(:names_list, :empty) if names_list.empty?
   end
 
   def remove_white_spaces_and_empty_strings
