@@ -160,6 +160,14 @@ uk:
       next_post: Наступна публікація
     post_thumb:
       read_more: Читати далі
+  search:
+    form:
+      placeholder: Введіть імʼя
+    index:
+      heading: Пошук
+      search_missing: В нас немає записів за таким іменем :(
+      name: Iмʼя
+      name_days: Іменини
   kaminari:
     next_page:
       next: Наст.

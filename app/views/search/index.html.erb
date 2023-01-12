@@ -1,0 +1,30 @@
+<h1 class="page-heading"><%= t ".heading" %>: <%= params[:query] %></h1>
+
+<% if !@search_response[:name].present? && !@search_response[:name_days].present? %>
+  <h3 class="fs-lora my-5"><%= t ".search_missing" %></h3>
+<% end %>
+
+<div class="row mt-5 pb-5">
+  <% if @search_response[:name].present? %>
+    <div class="col-6 col-sm-5 col-md-4">
+      <h2><%= t ".name" %></h2>
+      <div class="text-center">
+      <%= link_to name_path(@search_response[:name]), class: "name-link" do %>
+        <div class="name-box">
+          <p class="name-title"><%= @search_response[:name].title %></p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @search_response[:name_days].present? %>
+    <div class="col-sm-7 col-md-8">
+      <h2><%= t ".name_days" %></h2>
+      <% @search_response[:name_days].each do |name_day| %>
+        <h3 class="fs-lora"><%= name_day.day %> <%= name_day.month %></h3>
+        <p><%= name_day.names_list.join(", ") %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>

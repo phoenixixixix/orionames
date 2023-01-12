@@ -140,6 +140,14 @@ en:
       next_post: Next publication
     post_thumb:
       read_more: Read more
+  search:
+    form:
+      placeholder: Enter name
+    index:
+      heading: Search
+      search_missing: We have no records according to this name :(
+      name: Name
+      name_days: Name days
   kaminari:
     next_page:
       next: Next

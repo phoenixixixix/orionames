@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     # TODO: remove parenthesis after adding Admin feature
     get "(/month/:month)", action: :index, on: :collection, as: "", defaults: { month: NameDay::DEFAULT_MONTH }
   end
+  resources :search, only: :index
 end

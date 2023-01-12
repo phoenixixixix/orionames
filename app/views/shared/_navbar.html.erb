@@ -24,9 +24,7 @@
             <%= link_to t(".blog_posts"), posts_path, class: "nav-link nav-font me-lg-1 pt-3" %>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control nav-search nav-font ms-lg-2" type="search" aria-label="Search" placeholder="Search">
-        </form>
+        <%= render "search/form" %>
       </div>
     </nav>
   </div>

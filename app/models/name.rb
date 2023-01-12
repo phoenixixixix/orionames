@@ -2,6 +2,7 @@ require "./lib/letters"
 
 class Name < ApplicationRecord
   include Letters
+  MAX_NAME_LENGTH = 25
 
   paginates_per 100
 
@@ -17,7 +18,7 @@ class Name < ApplicationRecord
   before_validation -> { title.capitalize! }, if: :title
   before_save :set_capital_letter
 
-  validates :title, presence: true, uniqueness: true, length: { maximum: 25 }
+  validates :title, presence: true, uniqueness: true, length: { maximum: MAX_NAME_LENGTH }
   validates :category, presence: true
 
   scope :by_category, ->(category) { where(category: category) }
