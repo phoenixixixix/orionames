@@ -1,16 +1,18 @@
-<h1 class="page-heading"><%= t ".heading" %> <%= params[:month] %></h1>
-<%= render "months" %>
+<h1 class="page-heading"><%= t ".heading" %> <%= NameDay.human_enum_name("month", params[:month]) %></h1>
 
-<% @name_days.each do |name_day| %>
-  <div class="row">
-    <div class="col">
-      <h3 class="fs-lora"><%= name_day.day %> <%= name_day.month %></h3>
-    </div>
-    <div class="col">
-      <%= link_to "edit", edit_name_day_path(name_day) %>
-    </div>
-    <p><%= name_day.names_list.join(", ") %></p>
+<div class="mb-5">
+  <%= render "months" %>
+</div>
+
+<%= render "current_name_days", name_day_today: @name_day_today, name_day_tomorrow: @name_day_tomorrow %>
+
+<div class="row">
+  <div class="col">
+    <% @name_days.each do |name_day| %>
+      <h3 class="fs-lora"><%= name_day.day %> <%= NameDay.human_enum_name("numeral_month", name_day.month) %></h3>
+      <p><%= name_day.names_list.join(", ") %></p>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 <%= link_to "add name day", new_name_day_path %>

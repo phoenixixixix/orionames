@@ -6,6 +6,8 @@ class NameDaysController < ApplicationController
 
   def index
     @name_days = NameDay.by_month(params[:month]).order(:day)
+    @name_day_today = NameDay.celebration_today
+    @name_day_tomorrow = NameDay.celebration_tomorrow
   end
 
   def new

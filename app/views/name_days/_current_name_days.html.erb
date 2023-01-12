@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6 mb-5">
+    <div class="celebration-box">
+      <% if name_day_today %>
+        <h4 class="fs-lora mb-3"><%= t ".name_day_today" %> <%= name_day_today.human_day_month %> <%= t ".celebrating" %>:</h4>
+        <p><%= name_day_today.names_list.join(", ") %></p>
+      <% else %>
+        <h4 class="fs-lora mb-3"><%= t ".name_day_today" %></h4>
+        <p><%= t ".missing" %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-5">
+    <div class="celebration-box">
+      <% if name_day_tomorrow %>
+        <h4 class="fs-lora mb-3"><%= t ".name_day_tomorrow" %> <%= name_day_tomorrow.human_day_month %> <%= t ".celebrating" %>:</h4>
+        <p><%= name_day_tomorrow.names_list.join(", ") %></p>
+      <% else %>
+        <h4 class="fs-lora mb-3"><%= t ".name_day_tomorrow" %></h4>
+        <p><%= t ".missing" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

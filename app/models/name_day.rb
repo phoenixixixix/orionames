@@ -28,7 +28,7 @@ class NameDay < ApplicationRecord
   end
 
   def human_day_month
-    "#{day} #{month}"
+    "#{day} #{self.class.human_enum_name("numeral_month", month)}"
   end
 
   private

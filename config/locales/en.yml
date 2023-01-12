@@ -50,6 +50,19 @@ en:
           october: October
           november: November
           december: December
+        numeral_months:
+          january: January
+          february: February
+          march: March
+          april: April
+          may: May
+          june: June
+          july: July
+          august: August
+          september: September
+          october: October
+          november: November
+          december: December
 
     errors:
       models:
@@ -127,6 +140,11 @@ en:
   name_days:
     index:
       heading: Calendar on
+    current_name_days:
+      name_day_today: Name day today
+      name_day_tomorrow: Name day tomorrow
+      celebrating: celebrating
+      missing: Missing
   selections:
     index:
       heading: Names Selections

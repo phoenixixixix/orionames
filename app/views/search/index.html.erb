@@ -22,7 +22,7 @@
     <div class="col-sm-7 col-md-8">
       <h2><%= t ".name_days" %></h2>
       <% @search_response[:name_days].each do |name_day| %>
-        <h3 class="fs-lora"><%= name_day.day %> <%= name_day.month %></h3>
+        <h3 class="fs-lora"><%= name_day.day %> <%= NameDay.human_enum_name("numeral_month", name_day.month) %></h3>
         <p><%= name_day.names_list.join(", ") %></p>
       <% end %>
     </div>

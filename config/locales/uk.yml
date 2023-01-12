@@ -33,6 +33,19 @@ uk:
           october: Жовтень
           november: Листопад
           december: Грудень
+        numeral_months:
+          january: Січня
+          february: Лютого
+          march: Березня
+          april: Квітня
+          may: Травня
+          june: Червня
+          july: Липня
+          august: Серпня
+          september: Вересня
+          october: Жовтня
+          november: Листопада
+          december: Грудня
       wiki:
         origin: Походження
         meaning: Значення
@@ -147,6 +160,11 @@ uk:
   name_days:
     index:
       heading: Каледар Іменин на
+    current_name_days:
+      name_day_today: Іменини сьогодні
+      name_day_tomorrow: Іменини завтра
+      celebrating: святкують
+      missing: Відсутні
   selections:
     index:
       heading: Підбірки Імен
