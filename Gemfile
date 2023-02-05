@@ -59,6 +59,9 @@ gem "font-awesome-sass", "~> 6.2.1"
 gem "breadcrumbs_on_rails"
 gem "whenever", require: false
 
+# Use Devise for Authentication, especially for admin feature implementation
+gem "devise"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
