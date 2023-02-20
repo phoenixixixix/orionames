@@ -1,17 +1,62 @@
-<%= form_with(model: admin_name) do |form| %>
-  <% if admin_name.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(admin_name.errors.count, "error") %> prohibited this admin_name from being saved:</h2>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "names/dynamically_add_fields" %>
+<% end %>
 
-      <ul>
-        <% admin_name.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<%= form_with model: [:admin, @name] do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control"  %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :category %>
+        <%= f.select :category, Name.categories.keys, {}, { class: "form-select" } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :origin_country_id %>
+        <%= f.collection_select :origin_country_id, OriginCountry.all, :id, :title, { include_blank: true }, { class: "form-select" } %>
+      </div>
     </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
   </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="mt-3">Вікі: </h3>
+
+      <%= f.fields_for :wiki do |wiki_form| %>
+        <div class="form-group">
+          <%= wiki_form.label :origin %>
+          <%= wiki_form.text_area :origin, size: "70x5", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= wiki_form.label :meaning %>
+          <%= wiki_form.text_area :meaning, size: "70x5", class: "form-control" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <h3 class="mt-3">Знаменитості: </h3>
+
+      <%= f.fields_for :famous_people_list do |famous_people_f| %>
+        <div id="famous_people_fields">
+          <%= famous_people_f.label :names %>
+
+          <% if famous_names = @name.famous_people_list.names %>
+            <% famous_names.each do |famous_name| %>
+              <%= text_field_tag "name[famous_people_list_attributes][names][]", famous_name, class: "form-control mb-1" %>
+            <% end %>
+          <% end %>
+        </div>
+
+        <a id="add_famous_name" class="link-primary">+ додати імʼя</a>
+      <% end %>
+    </div>
+  </div>
+
+  <%= f.submit "Save", class: "btn btn-plain mt-3" %>
 <% end %>

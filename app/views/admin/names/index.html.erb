@@ -1,14 +1,30 @@
+<h1>Панель Імен</h1>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Names</h1>
+<%= link_to "Додити імʼя", new_admin_name_path, class: "btn btn-plain" %>
 
-<div id="admin_names">
-  <% @names.each do |name| %>
-    <%= render name %>
-    <p>
-      <%= link_to "Show this name", name %>
-    </p>
+<table class="table">
+  <% @names.group_by(&:capital_letter).each do |letter, names| %>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col"><%= letter %></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% names.each do |name| %>
+        <tr>
+          <th></th>
+          <td><%= link_to name.title, name_path(name) %></td>
+          <td><%= link_to "Edit", edit_admin_name_path(name) %></td>
+          <td><%= button_to "Delete", admin_name_path(name), method: :delete, class: "btn-destroy" %></td>
+        </tr>
+    <% end %>
+    </tbody>
   <% end %>
-</div>
+</table>
 
-<%= link_to "New name", new_admin_name_path %>
+<%= paginate @names, window: 1 %>

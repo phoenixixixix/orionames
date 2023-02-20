@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get "admin", to: "admin/names#index"
   namespace :admin do
-    resources :names
+    resources :names, except: :show
     resources :selections, except: :show
     resources :posts
     resources :name_days, except: :show do

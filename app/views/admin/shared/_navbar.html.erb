@@ -8,7 +8,7 @@
       <div class=" collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <%= link_to "Імена", names_path, class: "nav-link nav-font me-lg-1 pt-3" %>
+            <%= link_to "Імена", admin_names_path, class: "nav-link nav-font me-lg-1 pt-3" %>
           </li>
           <li class="nav-item">
             <%= link_to "Іменини", name_days_path, class: "nav-link nav-font me-lg-1 pt-3" %>
@@ -20,7 +20,7 @@
             <%= link_to "Пости", posts_path, class: "nav-link nav-font me-lg-1 pt-3" %>
           </li>
           <li>
-            <%= button_to "Вийти (Адмін)", destroy_admin_session_path, method: :delete, class: "btn-admin pt-3" %>
+            <%= button_to "Вийти (Адмін)", destroy_admin_session_path, method: :delete, class: "btn-destroy pt-3" %>
           </li>
         </ul>
       </div>
