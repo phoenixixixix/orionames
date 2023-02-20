@@ -382,6 +382,12 @@ Buttons styles
   color: #fc3887 !important;
 }
 
+.btn-admin {
+  background: none;
+  border: none;
+  color: red;
+}
+
 /*
 Pagination styles
  */

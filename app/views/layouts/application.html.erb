@@ -14,7 +14,11 @@
   <body>
     <div class="body-wrapper">
 
-      <%= render "shared/navbar" %>
+      <% if admin_signed_in? %>
+        <%= render "admin/shared/navbar" %>
+      <% else %>
+        <%= render "shared/navbar" %>
+      <% end %>
 
       <div class="content-wrapper">
         <div class="container">
