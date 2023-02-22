@@ -1,5 +1,5 @@
-class Admin::SelectionsController < ApplicationController
-  before_action :set_admin_selection, only: %i[edit update destroy]
+class Admin::SelectionsController < Admin::AdminController
+  before_action :set_selection, only: %i[edit update destroy]
 
   def index
     @selections = Selection.order(created_at: :desc)
@@ -41,7 +41,7 @@ class Admin::SelectionsController < ApplicationController
 
   private
 
-  def set_admin_selection
+  def set_selection
     @selection = Selection.find(params[:id])
   end
 
