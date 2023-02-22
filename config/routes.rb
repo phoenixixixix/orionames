@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :names, only: %i[index show]
   resources :selections, only: :index
   resources :posts
-  resources :name_days, except: :show do
+  resources :name_days, only: :index do
     # TODO: remove parenthesis after adding Admin feature
     get "(/month/:month)", action: :index, on: :collection, as: "", defaults: { month: NameDay::DEFAULT_MONTH }
   end

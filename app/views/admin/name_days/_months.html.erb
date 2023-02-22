@@ -1,0 +1,3 @@
+<% NameDay.months.keys.each do |month| %>
+  <%= link_to NameDay.human_enum_name("month", month), admin_name_days_path(month: month), class: "btn btn-plain" %>
+<% end %>

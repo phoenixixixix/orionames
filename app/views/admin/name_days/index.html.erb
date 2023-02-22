@@ -1,0 +1,31 @@
+<h1 class="page-heading">Іменини <%= NameDay.human_enum_name("month", params[:month]) %></h1>
+
+<p style="color: green"><%= notice %></p>
+
+<div class="mb-5">
+  <%= render "months" %>
+</div>
+
+<%= link_to "Додати дату", new_admin_name_day_path, class: "btn btn-action" %>
+
+<table class="table">
+  <thead class="table-dark">
+  <tr>
+    <th scope="col">Число</th>
+    <th scope="col">Імена</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @name_days.each do |name_day| %>
+    <tr>
+      <th><%= name_day.day %></th>
+      <td><%= name_day.names_list.join(", ") %></td>
+      <td><%= link_to "Edit", edit_admin_name_day_path(name_day) %></td>
+      <td><%= button_to "Delete", admin_name_day_path(name_day), method: :delete, class: "btn-destroy" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
