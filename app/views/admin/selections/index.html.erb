@@ -1,0 +1,26 @@
+<h1 class="page-heading">Підбірки</h1>
+
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "Додати Підбірку", new_admin_selection_path, class: "btn btn-plain" %>
+
+<table class="table">
+    <thead class="table-dark">
+    <tr>
+      <th scope="col">Назва</th>
+      <th scope="col">Закріп.?</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @selections.each do |selection| %>
+      <tr>
+        <th><%= selection.title %></th>
+        <td><%= "pinned" if selection.pinned? %></td>
+        <td><%= link_to "Edit", edit_admin_selection_path(selection) %></td>
+        <td><%= button_to "Delete", admin_selection_path(selection), method: :delete, class: "btn-destroy" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+</table>

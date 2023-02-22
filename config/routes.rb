@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/main", to: "pages#main"
   resources :search, only: :index
   resources :names, only: %i[index show]
-  resources :selections, except: :show
+  resources :selections, only: :index
   resources :posts
   resources :name_days, except: :show do
     # TODO: remove parenthesis after adding Admin feature
