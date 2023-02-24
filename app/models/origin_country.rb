@@ -3,5 +3,5 @@ class OriginCountry < ApplicationRecord
 
   has_many :names
 
-  validates :title, presence: true
+  validates :title, presence: true, uniqueness: true
 end

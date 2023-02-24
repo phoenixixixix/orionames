@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get "admin", to: "admin/names#index"
   namespace :admin do
+    resources :origin_countries, only: %i[new create]
     resources :names, except: :show
     resources :selections, except: :show
     resources :posts, except: :show

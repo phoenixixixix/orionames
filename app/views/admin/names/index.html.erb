@@ -3,6 +3,7 @@
 <p style="color: green"><%= notice %></p>
 
 <%= link_to "Додити імʼя", new_admin_name_path, class: "btn btn-action" %>
+<%= link_to "Додати країну походження", new_admin_origin_country_path, class: "btn btn-action" %>
 
 <table class="table">
   <% @names.group_by(&:capital_letter).each do |letter, names| %>

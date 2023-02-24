@@ -73,7 +73,8 @@ uk:
         origin_country:
           attributes:
             title:
-              blank: назва не може бути пуста
+              blank: не може бути пусто
+              taken: вже існує
         post:
           attributes:
             title:
