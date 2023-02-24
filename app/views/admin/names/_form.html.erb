@@ -3,6 +3,8 @@
 <% end %>
 
 <%= form_with model: [:admin, @name] do |f| %>
+  <%= render partial: "admin/shared/form_errors", locals: { model: @name } %>
+
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">

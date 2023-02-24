@@ -16,7 +16,7 @@ class Admin::SelectionsController < Admin::AdminController
     if @selection.save
       redirect_to admin_selections_path, notice: "Selection was successfully created."
     else
-      render "new"
+      render :new, status: :unprocessable_entity
     end
   end
 

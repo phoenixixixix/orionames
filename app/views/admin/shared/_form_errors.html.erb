@@ -1,0 +1,11 @@
+<% if model.errors.any? %>
+  <div style="color: red">
+    <h3><%= pluralize(model.errors.count, "error") %> occurred:</h3>
+
+    <ul>
+      <% model.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

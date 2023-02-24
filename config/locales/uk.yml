@@ -55,9 +55,9 @@ uk:
         name:
           attributes:
             title:
-              taken: імʼя вже існує
-              blank: назва не можу бути пуста
-              too_long: назва надто довга (максимум %{count} символів)
+              taken: вже існує
+              blank: не можу бути пуста
+              too_long: надто довга (максимум %{count} символів)
             category:
               blank: категорія не можу бути пуста
         name_day:
@@ -69,7 +69,7 @@ uk:
             base:
               existing: Ця Календарна дата вже існує
             names_list:
-              empty: cписок імен не може бути пустий
+              empty: не може бути пустим
         origin_country:
           attributes:
             title:
@@ -78,26 +78,26 @@ uk:
         post:
           attributes:
             title:
-              blank: назва не можу бути пуста
-              too_long: назва надто довга (максимум %{count} символів)
+              blank: не можу бути пуста
+              too_long: надто довга (максимум %{count} символів)
             body:
-              blank: контент не можу бути пустим
-              too_long: контент надто довгий (максимум %{count} символів)
+              blank: не можу бути пустим
+              too_long: надто довгий (максимум %{count} символів)
         selection:
           attributes:
             title:
-              blank: назва не можу бути пуста
+              blank: не можу бути пуста
             names:
-              names_exactly_10: кількість імени повинна бути саме 10
+              names_exactly_10: кількість повинна бути саме 10
               numeric_key_in_names: ключі повинні бути цифрами
         wiki:
           attributes:
             origin:
-              blank: походження не може бути пустим
-              too_long: контент походження надто довгий (максимум %{count} символів)
+              blank: не може бути пустим
+              too_long: надто довге (максимум %{count} символів)
             meaning:
-              blank: значення не може бути пустим
-              too_long: контент значення надто довгий (максимум %{count} символів)
+              blank: не може бути пустим
+              too_long: надто довге (максимум %{count} символів)
 
 # Controllers
   breadcrumbs:

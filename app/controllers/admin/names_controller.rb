@@ -18,7 +18,7 @@ class Admin::NamesController < Admin::AdminController
     if @name.save
       redirect_to admin_names_path, notice: "Name was successfully created."
     else
-      render "new"
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class Admin::NamesController < Admin::AdminController
     if @name.update(name_params)
       redirect_to @name
     else
-      render "edit"
+      render :edit, status: :unprocessable_entity
     end
   end
 

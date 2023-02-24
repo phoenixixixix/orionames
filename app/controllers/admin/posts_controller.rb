@@ -1,6 +1,6 @@
 class Admin::PostsController < Admin::AdminController
   before_action :set_post, only: %i[edit update destroy]
-  before_action :get_all_tags, only: %i[new edit]
+  before_action :get_all_tags, only: %i[new edit create update]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -16,7 +16,7 @@ class Admin::PostsController < Admin::AdminController
     if @post.save
       redirect_to admin_posts_path, notice: "Post was successfully created."
     else
-      render "new"
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +27,7 @@ class Admin::PostsController < Admin::AdminController
     if @post.update(post_params)
       redirect_to admin_posts_path, notice: "Post was successfully updated."
     else
-      render "edit"
+      render :edit, status: :unprocessable_entity
     end
   end
 

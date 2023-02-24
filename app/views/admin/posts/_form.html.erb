@@ -1,4 +1,6 @@
 <%= form_with model: [:admin, @post] do |f| %>
+  <%= render partial: "admin/shared/form_errors", locals: { model: @post } %>
+
   <div class="form-group mb-1">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>

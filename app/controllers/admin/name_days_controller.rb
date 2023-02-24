@@ -15,7 +15,7 @@ class Admin::NameDaysController < Admin::AdminController
     if @name_day.save
       redirect_to admin_name_days_path, notice: "Name day was successfully created."
     else
-      render "new"
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class Admin::NameDaysController < Admin::AdminController
     if @name_day.update(name_day_params)
       redirect_to admin_name_days_path, notice: "Name day was successfully updated."
     else
-      render "edit"
+      render :edit, status: :unprocessable_entity
     end
   end
 
