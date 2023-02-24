@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %w(show edit update)
-  before_action :get_all_tags, except: :show
+  before_action :set_post, only: :show
+  before_action :get_all_tags, only: :index
   add_breadcrumb I18n.t("breadcrumbs.main_page"), :root_path, only: %w(index show)
   add_breadcrumb I18n.t("breadcrumbs.blog_posts"), :posts_path, only: %w(index show)
 
@@ -16,42 +16,14 @@ class PostsController < ApplicationController
     @photo = @post.get_unsplash_photo
   end
 
-  def new
-    @post = Post.new
-  end
-
-  def create
-    @post = Post.new(post_params)
-
-    if @post.save
-      redirect_to posts_path
-    else
-      render "new"
-    end
-  end
-
-  def edit; end
-
-  def update
-    if @post.update(post_params)
-      redirect_to @post
-    else
-      render "edit"
-    end
-  end
-
   private
 
-  def post_params
-    params.require(:post).permit(:title, :body, :tag_list, :photo_token, :hot)
+  def set_post
+    @post = Post.find(params[:id])
   end
 
   def tag_param
     params.permit(:tag)
-  end
-
-  def set_post
-    @post = Post.find(params[:id])
   end
 
   def get_all_tags
