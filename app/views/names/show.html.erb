@@ -33,7 +33,7 @@
   <% if @name.similar_names.any? %>
     <div class="name-page-section">
       <h4 class="mb-4"><%= t ".body.similar_names" %></h4>
-      <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-5 g-3">
+      <div class="row row-cols-2 row-cols-sm-3 g-3">
         <% @name.similar_names.each do |name| %>
 
           <div class="col text-center">

@@ -46,7 +46,7 @@ class Name < ApplicationRecord
   end
 
   def similar_names
-    Name.where(capital_letter: capital_letter, category: category).limit(5) - [self]
+    Name.where(capital_letter: capital_letter, category: category).limit(6) - [self]
   end
 
   private

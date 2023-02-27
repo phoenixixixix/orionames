@@ -31,12 +31,12 @@
       <%= f.fields_for :wiki do |wiki_form| %>
         <div class="form-group">
           <%= wiki_form.label :origin %>
-          <%= wiki_form.text_area :origin, size: "70x5", class: "form-control" %>
+          <%= wiki_form.text_area :origin, size: "70x13", class: "form-control" %>
         </div>
 
         <div class="form-group">
           <%= wiki_form.label :meaning %>
-          <%= wiki_form.text_area :meaning, size: "70x5", class: "form-control" %>
+          <%= wiki_form.text_area :meaning, size: "70x13", class: "form-control" %>
         </div>
       <% end %>
     </div>
