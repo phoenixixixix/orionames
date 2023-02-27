@@ -79,7 +79,7 @@ HTML elements styles
 */
 
 body {
-  background-color: #FCE38A !important;
+  background-color: #D6E4E5 !important;
 }
 
 h1 {
@@ -151,7 +151,7 @@ nav.navbar ul.navbar-nav a::after {
   top: 100%;
   left: 0;
   height: 2px;
-  background-color: #FF165D;
+  background-color: #EB6440;
   transform: scaleX(0);
   transition: transform .35s ease;
 }
@@ -205,7 +205,7 @@ Names styles
 }
 
 .name-box:hover {
-  background-color: #FCE38A;
+  background-color: #ff8663;
 }
 
 .name-link {
@@ -224,7 +224,7 @@ Names styles
 }
 
 .remove-filter-link:hover {
-  color: #ec0000;
+  color: #e30c0c;
 }
 
 .remove-filter-link i {
@@ -318,12 +318,14 @@ Post styles
 
 .post-thumb {
   padding: 30px;
+  color: inherit;
   border-bottom: 1px solid;
   border-color: #d2d6da;
-  transition: box-shadow .25s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  transition: color .25s, box-shadow .25s cubic-bezier(0.215, 0.610, 0.355, 1.000);
 }
 
 .post-thumb:hover {
+  color: #497174 !important;
   box-shadow: 0 5px 20px -5px rgba(91, 91, 91, 0.6);
   z-index: 1;
 }
@@ -370,16 +372,16 @@ Buttons styles
 }
 
 .btn-plain:hover {
-  color: #FCE38A !important;
+  color: #497174 !important;
 }
 
 .btn-action {
-  color:  #FF165D !important;
+  color:  #EB6440 !important;
   transition: color .2s !important;
 }
 
 .btn-action:hover {
-  color: #fc3887 !important;
+  color: #ff8663 !important;
 }
 
 .btn-destroy {
@@ -416,9 +418,14 @@ Breadcrumbs styles
  */
 
 .breadcrumbs {
-  color: #8f8f8f;
+  color: #ababab;
 }
 
 .breadcrumbs a {
-  color: #8f8f8f;
+  color: #afafaf;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: #497174;
 }
