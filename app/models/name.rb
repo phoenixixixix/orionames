@@ -2,9 +2,12 @@ require "./lib/letters"
 
 class Name < ApplicationRecord
   include Letters
-  MAX_NAME_LENGTH = 25
+  extend FriendlyId
 
+  friendly_id :title, use: [:slugged, :simple_i18n]
   paginates_per 100
+
+  MAX_NAME_LENGTH = 25
 
   belongs_to :origin_country, optional: true
   has_one :wiki, dependent: :destroy

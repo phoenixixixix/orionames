@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_172751) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_17_190913) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,7 +57,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_172751) do
     t.datetime "updated_at", null: false
     t.bigint "origin_country_id"
     t.string "capital_letter"
+    t.string "slug_en"
+    t.string "slug_uk"
     t.index ["origin_country_id"], name: "index_names_on_origin_country_id"
+    t.index ["slug_en"], name: "index_names_on_slug_en", unique: true
+    t.index ["slug_uk"], name: "index_names_on_slug_uk", unique: true
   end
 
   create_table "origin_countries", force: :cascade do |t|

@@ -43,7 +43,7 @@ class Admin::NamesController < Admin::AdminController
   private
 
     def set_name
-      @name = Name.find(params[:id])
+      @name = Name.friendly.find(params[:id])
     end
 
     def name_params
