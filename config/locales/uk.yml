@@ -106,6 +106,9 @@ uk:
     name_days: Календар Іменин
     selections: Підбірки
     blog_posts: Блог
+    404_page: Сторінка-404
+    422_page: Сторінка-422
+    500_page: Сторінка-500
 
 # Views
   shared:

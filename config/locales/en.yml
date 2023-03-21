@@ -85,6 +85,9 @@ en:
     name_days: Name Days
     selections: Selections
     blog_posts: Blog
+    404_page: Page-404
+    422_page: Page-422
+    500_page: Page-500
 
 # Views
   shared:
