@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_17_190913) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_21_152016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,6 +77,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_17_190913) do
     t.datetime "updated_at", null: false
     t.boolean "hot", default: false
     t.string "photo_token", default: ""
+    t.string "slug_en"
+    t.string "slug_uk"
+    t.index ["slug_en"], name: "index_posts_on_slug_en", unique: true
+    t.index ["slug_uk"], name: "index_posts_on_slug_uk", unique: true
   end
 
   create_table "selections", force: :cascade do |t|

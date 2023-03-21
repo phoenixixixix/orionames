@@ -1,6 +1,8 @@
 class Post < ApplicationRecord
-  paginates_per 5
+  extend FriendlyId
 
+  friendly_id :title, use: [:slugged, :simple_i18n]
+  paginates_per 5
   acts_as_taggable_on :tags
 
   before_save -> { photo_token.strip! }
