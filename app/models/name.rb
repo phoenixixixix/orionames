@@ -18,6 +18,7 @@ class Name < ApplicationRecord
 
   enum category: { male: 0, female: 1}
 
+  before_validation :set_slug_to_nil, if: :title_changed?
   before_validation -> { title.capitalize! }, if: :title
   before_save :set_capital_letter
 
@@ -56,5 +57,10 @@ class Name < ApplicationRecord
 
   def set_capital_letter
     self.capital_letter = title.first
+  end
+
+  def set_slug_to_nil
+    self.slug_en = nil
+    self.slug_uk = nil
   end
 end
