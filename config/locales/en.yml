@@ -90,6 +90,16 @@ en:
     500_page: Page-500
 
 # Views
+  errors:
+    not_found:
+      title: Page not found
+      message: Unfortunately, we haven't been able to find the page you were looking for. If you typed in a URL, please make sure you have entered it correctly. It is also possible that the page you are looking for has been moved or deleted.
+    unacceptable:
+      title: Unprocessable Content
+      message: The change you wanted was rejected. Maybe you tried to change something you didn't have access to.
+    internal_server_error:
+      title: Internal Server Error
+      message: We're sorry, but something went wrong.
   shared:
     navbar:
       names_list: Names List
