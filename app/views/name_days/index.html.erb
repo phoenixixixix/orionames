@@ -1,3 +1,6 @@
+<% content_for :meta_title, "#{t ".heading"} #{NameDay.human_enum_name("month", params[:month])} | О.Імена" %>
+<% content_for :meta_description, "Календар іменин містить список імен та відповідні дні, коли ці імена відзначаються. Дати коли святкують День ангела. Також, перегляньте, в кого іменини (День ангела) сьогодні і завтра." %>
+
 <h1 class="page-heading"><%= t ".heading" %> <%= NameDay.human_enum_name("month", params[:month]) %></h1>
 
 <div class="mb-5">
