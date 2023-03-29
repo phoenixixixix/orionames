@@ -27,4 +27,6 @@ Rails.application.routes.draw do
       get "(/month/:month)", action: :index, on: :collection, as: "", defaults: { month: NameDay::DEFAULT_MONTH }
     end
   end
+
+  get "/sitemap.xml", to: "sitemaps#index", defaults: { format: :xml }
 end
