@@ -44,7 +44,13 @@ class Name < ApplicationRecord
 
   def self.apply_filters(filters_hash)
     names = self
-    filters_hash.each { |by_filter, value| names = names.public_send(by_filter, value) }
+
+    filters_hash.each do |by_filter, value|
+      # escaping methods that are not filters
+      return [] unless by_filter.start_with?("by_")
+
+      names = names.public_send(by_filter, value)
+    end
 
     names
   end
