@@ -1,18 +1,18 @@
 class NameDay < ApplicationRecord
+  DEFAULT_MONTH = "january"
+
   enum month: { january: 1, february: 2, march: 3, april: 4, may: 5, june: 6, july: 7,
                 august: 8, september: 9, october: 10, november: 11, december: 12 }
   enum celebration_status: { empty: 0, today: 1, tomorrow: 2 }
-
-  before_validation :remove_white_spaces_and_empty_strings
-  before_save -> { names_list.uniq!}
 
   validates :day, :month, presence: true
   validate :name_day_uniqueness, on: :create
   validate :names_list_fullness
 
-  scope :by_month, ->(month) { where(month: month) }
+  before_validation :remove_white_spaces_and_empty_strings
+  before_save -> { names_list.uniq!}
 
-  DEFAULT_MONTH = "january"
+  scope :by_month, ->(month) { where(month: month) }
 
   def self.celebration_today
     find_by(celebration_status: :today)
