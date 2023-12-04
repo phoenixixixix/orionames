@@ -3,6 +3,7 @@ require "./lib/letters"
 class Name < ApplicationRecord
   include Letters
   extend FriendlyId
+  extend FilterableModel
 
   friendly_id :title, use: [:slugged, :simple_i18n]
   paginates_per 100
@@ -41,6 +42,10 @@ class Name < ApplicationRecord
     order_clause << sanitize_sql_array(["ELSE ? END", LETTERS_LIST.length])
     order(Arel.sql(order_clause))
   }
+
+  class << self
+    def filter_proxy = Filters::NameFilterProxy
+  end
 
   def self.apply_filters(filters_hash)
     names = self
