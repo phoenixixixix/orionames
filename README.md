@@ -1,12 +1,13 @@
-# Dependencies
-Ruby: 3.1.2  
-Rails: 7.0.4
-DB: PostgreSQL
+Ruby 3.1.2  
+Rails 7.0.4  
+PostgreSQL  
+RSpec
 
-### Unsplash
-To load images in posts show page implemented using Unsplash API.
-* [Unsplash page for Orionames application](https://unsplash.com/oauth/applications/382703)
 
+### Using Unsplash imgs
+Link Unsplash img in Post to add Post's main img. 
+
+Unsplash app manage: [application page](https://unsplash.com/oauth/applications/382703)
 
 # Production Setup
 
