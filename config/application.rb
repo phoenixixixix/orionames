@@ -11,7 +11,7 @@ module Orionames
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.i18n.default_locale = :uk
+    config.i18n.default_locale = :en # :uk supported
 
     config.exceptions_app = self.routes
 
