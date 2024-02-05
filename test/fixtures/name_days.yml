@@ -1,9 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-default:
-  day: 1
-  month: 1
-  names_list:
-    - Oleh
-    - Maria
-

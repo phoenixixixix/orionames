@@ -1,6 +1,0 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-default:
-  name: default
-  origin: Origin text of default name
-  meaning: Meaning text of default name
